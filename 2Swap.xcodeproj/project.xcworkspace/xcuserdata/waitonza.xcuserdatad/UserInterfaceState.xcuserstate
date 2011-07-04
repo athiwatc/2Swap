@@ -265,7 +265,7 @@
 		<string>DVTIdentifier</string>
 		<string>DVTViewMagnitude</string>
 		<string></string>
-		<real>498</real>
+		<real>495</real>
 		<dict>
 			<key>$classes</key>
 			<array>
@@ -483,7 +483,7 @@
 		<string>IDESCMStatusFilteringEnabled</string>
 		<string>IDESelectedObjects</string>
 		<string>IDEExpandedItemsSet</string>
-		<string>{{0, 0}, {259, 678}}</string>
+		<string>{{0, 0}, {259, 675}}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -1385,9 +1385,9 @@
 		<string>PrimaryDocumentVisibleCharacterRange</string>
 		<string>HideAllIssues</string>
 		<string>PrimaryDocumentSelectedCharacterRange</string>
-		<real>331450505.68950301</real>
-		<string>{2449, 1549}</string>
-		<string>{3519, 0}</string>
+		<real>331451280.66851699</real>
+		<string>{2890, 1367}</string>
+		<string>{2630, 0}</string>
 		<string>-init</string>
 		<string>Xcode.IDEKit.EditorDocument.SourceCode</string>
 		<dict>
@@ -1431,7 +1431,7 @@
 				</dict>
 			</array>
 		</dict>
-		<string>{{0, 0}, {1140, 585}}</string>
+		<string>{{0, 0}, {1140, 582}}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -1813,7 +1813,7 @@
 			</array>
 		</dict>
 		<string>IDEEditor</string>
-		<real>607</real>
+		<real>604</real>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -1870,7 +1870,7 @@
 				</dict>
 			</array>
 		</dict>
-		<string>{{20, 80}, {1400, 798}}</string>
+		<string>{{20, 83}, {1400, 795}}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -2418,7 +2418,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>331450463.50653303</real>
+		<real>331451118.86942101</real>
 		<string>{0, 378}</string>
 		<string>{0, 0}</string>
 		<dict>
@@ -2466,9 +2466,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>331450505.687648</real>
-		<string>{2449, 1549}</string>
-		<string>{3519, 0}</string>
+		<real>331451280.66711301</real>
+		<string>{2890, 1367}</string>
+		<string>{2630, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
