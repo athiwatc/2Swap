@@ -8,7 +8,6 @@
 
 #import "MainMenuScene.h"
 
-
 @implementation MainMenuScene
 
 + (id) scene
