@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0348AEAC13CA1D32000D754A /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0348AEAB13CA1D32000D754A /* MainMenuScene.m */; };
 		DF2AD97113C17B910075167F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2AD97013C17B910075167F /* QuartzCore.framework */; };
 		DF2AD97313C17B910075167F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2AD97213C17B910075167F /* OpenGLES.framework */; };
 		DF2AD97513C17B910075167F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2AD97413C17B910075167F /* OpenAL.framework */; };
@@ -156,12 +157,13 @@
 		DF2ADB4413C17B930075167F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2ADB4313C17B930075167F /* main.m */; };
 		DF2ADB4713C17B930075167F /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = DF2ADB4613C17B930075167F /* AppDelegate.mm */; };
 		DF2ADB4A13C17B930075167F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2ADB4913C17B930075167F /* RootViewController.m */; };
-		DF2ADB4D13C17B930075167F /* HelloWorldLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = DF2ADB4C13C17B930075167F /* HelloWorldLayer.mm */; };
 		DF2ADB5013C17B930075167F /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = DF2ADB4F13C17B930075167F /* GLES-Render.mm */; };
 		DF2ADB5313C17B940075167F /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = DF2ADB5213C17B940075167F /* blocks.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0348AEAA13CA1D32000D754A /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
+		0348AEAB13CA1D32000D754A /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
 		DF2AD96C13C17B910075167F /* 2Swap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2Swap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF2AD97013C17B910075167F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DF2AD97213C17B910075167F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -467,8 +469,6 @@
 		DF2ADB4613C17B930075167F /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		DF2ADB4813C17B930075167F /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		DF2ADB4913C17B930075167F /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		DF2ADB4B13C17B930075167F /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		DF2ADB4C13C17B930075167F /* HelloWorldLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HelloWorldLayer.mm; sourceTree = "<group>"; };
 		DF2ADB4E13C17B930075167F /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		DF2ADB4F13C17B930075167F /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
 		DF2ADB5113C17B930075167F /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
@@ -494,6 +494,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0348AEA813CA1CD5000D754A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0348AEA913CA1CEE000D754A /* Scenes */,
+				DF2ADB4513C17B930075167F /* AppDelegate.h */,
+				DF2ADB4613C17B930075167F /* AppDelegate.mm */,
+				DF2ADB4813C17B930075167F /* RootViewController.h */,
+				DF2ADB4913C17B930075167F /* RootViewController.m */,
+				DF2ADB4E13C17B930075167F /* GLES-Render.h */,
+				DF2ADB4F13C17B930075167F /* GLES-Render.mm */,
+				DF2ADB5113C17B930075167F /* GameConfig.h */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		0348AEA913CA1CEE000D754A /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0348AEAA13CA1D32000D754A /* MainMenuScene.h */,
+				0348AEAB13CA1D32000D754A /* MainMenuScene.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
 		DF2AD96113C17B910075167F = {
 			isa = PBXGroup;
 			children = (
@@ -529,15 +553,7 @@
 		DF2AD98013C17B910075167F /* 2Swap */ = {
 			isa = PBXGroup;
 			children = (
-				DF2ADB4513C17B930075167F /* AppDelegate.h */,
-				DF2ADB4613C17B930075167F /* AppDelegate.mm */,
-				DF2ADB4813C17B930075167F /* RootViewController.h */,
-				DF2ADB4913C17B930075167F /* RootViewController.m */,
-				DF2ADB4B13C17B930075167F /* HelloWorldLayer.h */,
-				DF2ADB4C13C17B930075167F /* HelloWorldLayer.mm */,
-				DF2ADB4E13C17B930075167F /* GLES-Render.h */,
-				DF2ADB4F13C17B930075167F /* GLES-Render.mm */,
-				DF2ADB5113C17B930075167F /* GameConfig.h */,
+				0348AEA813CA1CD5000D754A /* Classes */,
 				DF2AD98113C17B910075167F /* Resources */,
 				DF2AD99513C17B910075167F /* libs */,
 				DF2ADB4113C17B930075167F /* Supporting Files */,
@@ -1205,8 +1221,8 @@
 				DF2ADB4413C17B930075167F /* main.m in Sources */,
 				DF2ADB4713C17B930075167F /* AppDelegate.mm in Sources */,
 				DF2ADB4A13C17B930075167F /* RootViewController.m in Sources */,
-				DF2ADB4D13C17B930075167F /* HelloWorldLayer.mm in Sources */,
 				DF2ADB5013C17B930075167F /* GLES-Render.mm in Sources */,
+				0348AEAC13CA1D32000D754A /* MainMenuScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1302,6 +1318,7 @@
 				DF2ADB5813C17B940075167F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
