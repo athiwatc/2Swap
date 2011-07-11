@@ -25,7 +25,7 @@
     {
         CCLOG(@"%@: %@", NSStringFromSelector(_cmd), self);
 		
-		CCLabelTTF* label = [CCLabelTTF labelWithString:@"First Scene" fontName:@"Marker Felt" fontSize:64];
+		CCLabelTTF* label = [CCLabelTTF labelWithString:@"Main Menu Scene" fontName:@"Marker Felt" fontSize:64];
 		label.color = ccYELLOW;
 		CGSize size = [[CCDirector sharedDirector] winSize];
 		label.position = CGPointMake(size.width / 2, size.height / 2);
