@@ -9,7 +9,7 @@
 #import "IntroScene.h"
 #import "MainMenuScene.h"
 #import "IntroLoadingScene.h"
-
+#import "LoadingScene.h"
 
 @implementation IntroScene
 
@@ -46,8 +46,8 @@
 
 - (void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    CCTransitionFade* transition = [CCTransitionFade transitionWithDuration:2 scene:[IntroLoadingScene scene]];
-    [[CCDirector sharedDirector] replaceScene:transition];
+    LoadingScene* scene = [LoadingScene sceneWithTargetScene:TargetSceneMainMenuScene];
+    [[CCDirector sharedDirector] replaceScene:scene];
 }
 
 - (void) onEnter

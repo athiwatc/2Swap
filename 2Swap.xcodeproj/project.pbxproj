@@ -10,7 +10,7 @@
 		0348AEAC13CA1D32000D754A /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0348AEAB13CA1D32000D754A /* MainMenuScene.m */; };
 		039CB6FB13CAF1A100D9F7BE /* IntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CB6FA13CAF1A100D9F7BE /* IntroScene.m */; };
 		039CB6FF13CAF21C00D9F7BE /* StoryModeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CB6FE13CAF21C00D9F7BE /* StoryModeScene.m */; };
-		03D2935413CB4A2800FEDFF9 /* IntroLoadingScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D2935313CB4A2800FEDFF9 /* IntroLoadingScene.m */; };
+		03C8AB5C13CB5D1900DEFA15 /* LoadingScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C8AB5B13CB5D1900DEFA15 /* LoadingScene.m */; };
 		DF2AD97113C17B910075167F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2AD97013C17B910075167F /* QuartzCore.framework */; };
 		DF2AD97313C17B910075167F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2AD97213C17B910075167F /* OpenGLES.framework */; };
 		DF2AD97513C17B910075167F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2AD97413C17B910075167F /* OpenAL.framework */; };
@@ -171,8 +171,8 @@
 		039CB6FA13CAF1A100D9F7BE /* IntroScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroScene.m; sourceTree = "<group>"; };
 		039CB6FD13CAF21C00D9F7BE /* StoryModeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryModeScene.h; sourceTree = "<group>"; };
 		039CB6FE13CAF21C00D9F7BE /* StoryModeScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryModeScene.m; sourceTree = "<group>"; };
-		03D2935213CB4A2800FEDFF9 /* IntroLoadingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLoadingScene.h; sourceTree = "<group>"; };
-		03D2935313CB4A2800FEDFF9 /* IntroLoadingScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLoadingScene.m; sourceTree = "<group>"; };
+		03C8AB5A13CB5D1900DEFA15 /* LoadingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingScene.h; sourceTree = "<group>"; };
+		03C8AB5B13CB5D1900DEFA15 /* LoadingScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingScene.m; sourceTree = "<group>"; };
 		DF2AD96C13C17B910075167F /* 2Swap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2Swap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF2AD97013C17B910075167F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DF2AD97213C17B910075167F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -522,6 +522,8 @@
 			isa = PBXGroup;
 			children = (
 				03D2935013CB497900FEDFF9 /* Intro */,
+				03C8AB5A13CB5D1900DEFA15 /* LoadingScene.h */,
+				03C8AB5B13CB5D1900DEFA15 /* LoadingScene.m */,
 				0348AEAA13CA1D32000D754A /* MainMenuScene.h */,
 				0348AEAB13CA1D32000D754A /* MainMenuScene.m */,
 				039CB6FD13CAF21C00D9F7BE /* StoryModeScene.h */,
@@ -535,8 +537,6 @@
 			children = (
 				039CB6F913CAF1A100D9F7BE /* IntroScene.h */,
 				039CB6FA13CAF1A100D9F7BE /* IntroScene.m */,
-				03D2935213CB4A2800FEDFF9 /* IntroLoadingScene.h */,
-				03D2935313CB4A2800FEDFF9 /* IntroLoadingScene.m */,
 			);
 			name = Intro;
 			sourceTree = "<group>";
@@ -1248,7 +1248,7 @@
 				0348AEAC13CA1D32000D754A /* MainMenuScene.m in Sources */,
 				039CB6FB13CAF1A100D9F7BE /* IntroScene.m in Sources */,
 				039CB6FF13CAF21C00D9F7BE /* StoryModeScene.m in Sources */,
-				03D2935413CB4A2800FEDFF9 /* IntroLoadingScene.m in Sources */,
+				03C8AB5C13CB5D1900DEFA15 /* LoadingScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

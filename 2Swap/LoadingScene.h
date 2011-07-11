@@ -1,5 +1,5 @@
 //
-//  IntroLoadingScene.h
+//  LoadingScene.h
 //  2Swap
 //
 //  Created by Wairung Tiranalinvit on 7/11/11.
@@ -9,10 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface IntroLoadingScene : CCLayer {
+@interface LoadingScene : CCLayer {
     
 }
-
-+ (id) scene;
 
 @end
