@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0348AEAC13CA1D32000D754A /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0348AEAB13CA1D32000D754A /* MainMenuScene.m */; };
+		039CB6FB13CAF1A100D9F7BE /* IntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CB6FA13CAF1A100D9F7BE /* IntroScene.m */; };
+		039CB6FF13CAF21C00D9F7BE /* StoryModeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CB6FE13CAF21C00D9F7BE /* StoryModeScene.m */; };
 		DF2AD97113C17B910075167F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2AD97013C17B910075167F /* QuartzCore.framework */; };
 		DF2AD97313C17B910075167F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2AD97213C17B910075167F /* OpenGLES.framework */; };
 		DF2AD97513C17B910075167F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2AD97413C17B910075167F /* OpenAL.framework */; };
@@ -164,6 +166,10 @@
 /* Begin PBXFileReference section */
 		0348AEAA13CA1D32000D754A /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
 		0348AEAB13CA1D32000D754A /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
+		039CB6F913CAF1A100D9F7BE /* IntroScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroScene.h; sourceTree = "<group>"; };
+		039CB6FA13CAF1A100D9F7BE /* IntroScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroScene.m; sourceTree = "<group>"; };
+		039CB6FD13CAF21C00D9F7BE /* StoryModeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryModeScene.h; sourceTree = "<group>"; };
+		039CB6FE13CAF21C00D9F7BE /* StoryModeScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryModeScene.m; sourceTree = "<group>"; };
 		DF2AD96C13C17B910075167F /* 2Swap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2Swap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF2AD97013C17B910075167F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DF2AD97213C17B910075167F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -514,6 +520,10 @@
 			children = (
 				0348AEAA13CA1D32000D754A /* MainMenuScene.h */,
 				0348AEAB13CA1D32000D754A /* MainMenuScene.m */,
+				039CB6F913CAF1A100D9F7BE /* IntroScene.h */,
+				039CB6FA13CAF1A100D9F7BE /* IntroScene.m */,
+				039CB6FD13CAF21C00D9F7BE /* StoryModeScene.h */,
+				039CB6FE13CAF21C00D9F7BE /* StoryModeScene.m */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -1223,6 +1233,8 @@
 				DF2ADB4A13C17B930075167F /* RootViewController.m in Sources */,
 				DF2ADB5013C17B930075167F /* GLES-Render.mm in Sources */,
 				0348AEAC13CA1D32000D754A /* MainMenuScene.m in Sources */,
+				039CB6FB13CAF1A100D9F7BE /* IntroScene.m in Sources */,
+				039CB6FF13CAF21C00D9F7BE /* StoryModeScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
