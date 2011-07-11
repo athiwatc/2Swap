@@ -9,8 +9,20 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface LoadingScene : CCLayer {
-    
+typedef enum
+{
+    TargetSceneINVALID = 0,
+    TargetSceneIntroScene,
+    TargetSceneMainMenuScene,
+    TargetSceneMAX,
+} TargetScenes;
+
+
+@interface LoadingScene : CCScene {
+    TargetScenes targetScene_;
 }
+
++(id) sceneWithTargetScene:(TargetScenes)targetScene;
+-(id) initWithTargetScene:(TargetScenes)targetScene;
 
 @end
