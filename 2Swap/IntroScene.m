@@ -8,7 +8,6 @@
 
 #import "IntroScene.h"
 #import "MainMenuScene.h"
-#import "IntroLoadingScene.h"
 #import "LoadingScene.h"
 
 @implementation IntroScene
