@@ -73,6 +73,7 @@
 - (void) storyModeTouched:(id)sender
 {
     CCLOG(@"Story_Mode Button touched : %@",sender);
+    [[CCDirector sharedDirector] replaceScene:[StoryModeScene scene]];
 }
 
 - (void) challengeModeTouched:(id)sender
