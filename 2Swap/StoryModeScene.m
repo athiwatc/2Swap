@@ -25,13 +25,14 @@
     {
         CCLOG(@"%@: %@", NSStringFromSelector(_cmd), self);
         CCSprite* bg = [CCSprite spriteWithFile:@"Story_mode_screen.png"];
-		CCSprite* level1 = [CCSprite spriteWithFile:@"Story_mode_but.png"];
+		CCSprite* level1 = [CCSprite spriteWithFile:@"Story_mode_play_but.png"];
 		CCLabelTTF* label = [CCLabelTTF labelWithString:@"Story Mode Scene" fontName:@"Marker Felt" fontSize:64];
 		label.color = ccRED;
 		CGSize size = [[CCDirector sharedDirector] winSize];
+        //CCMenu* menu = [CCMenu menuWithItems:story_mode_butt,challenge_mode_butt,hiscore_mode_butt, nil];
         bg.position = CGPointMake(size.width / 2, size.height / 2);
 		label.position = CGPointMake(size.width / 2, size.height / 2);
-        level1.position = CGPointMake(size.width / 2, size.height / 2 + 100);
+        level1.position = CGPointMake(size.width / 2, size.height / 2 - 100);
 		[self addChild:label z:1];
         [self addChild:level1 z:1];
         [self addChild:bg z:0];
