@@ -14,6 +14,9 @@ typedef enum
     TargetSceneINVALID = 0,
     TargetSceneIntroScene,
     TargetSceneMainMenuScene,
+    TargetSceneStoryModeScene,
+    TargetSceneChallengeModeScene,
+    TargetSceneHiScoreModeScene,
     TargetSceneMAX,
 } TargetScenes;
 
