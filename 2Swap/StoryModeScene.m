@@ -24,12 +24,14 @@
     if ((self = [super init]))
     {
         CCLOG(@"%@: %@", NSStringFromSelector(_cmd), self);
-		
+		CCSprite* level1 = [CCSprite spriteWithFile:@"Story_mode_but.png"];
 		CCLabelTTF* label = [CCLabelTTF labelWithString:@"Story Mode Scene" fontName:@"Marker Felt" fontSize:64];
 		label.color = ccRED;
 		CGSize size = [[CCDirector sharedDirector] winSize];
 		label.position = CGPointMake(size.width / 2, size.height / 2);
+        level1.position = CGPointMake(size.width / 2, size.height / 2 + 100);
 		[self addChild:label];
+        [self addChild:level1];
 		
 		self.isTouchEnabled = YES;
     }
