@@ -533,13 +533,10 @@
 		0348AEA913CA1CEE000D754A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DF5C16B613D03CA400339CA1 /* StoryMode */,
+				DF5C16B513D03C9400339CA1 /* MainMenu */,
+				DF5C16B313D03C8100339CA1 /* Loading */,
 				03D2935013CB497900FEDFF9 /* Intro */,
-				03C8AB5A13CB5D1900DEFA15 /* LoadingScene.h */,
-				03C8AB5B13CB5D1900DEFA15 /* LoadingScene.m */,
-				0348AEAA13CA1D32000D754A /* MainMenuScene.h */,
-				0348AEAB13CA1D32000D754A /* MainMenuScene.m */,
-				039CB6FD13CAF21C00D9F7BE /* StoryModeScene.h */,
-				039CB6FE13CAF21C00D9F7BE /* StoryModeScene.m */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -599,8 +596,7 @@
 		DF2AD98113C17B910075167F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9BF13F5B13CED34200CE3964 /* Story_mode_play_but.png */,
-				9BF13F5813CECDAE00CE3964 /* Story_mode_screen.png */,
+				DF5C16B713D03CC500339CA1 /* StoryMode */,
 				0399563613CDF7A100907657 /* 2swap_logo_low.png */,
 				0399563713CDF7A100907657 /* Challenge_mode_but.png */,
 				0399563813CDF7A100907657 /* Hiscore_but.png */,
@@ -1058,6 +1054,42 @@
 				DF2ADB4313C17B930075167F /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DF5C16B313D03C8100339CA1 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				03C8AB5A13CB5D1900DEFA15 /* LoadingScene.h */,
+				03C8AB5B13CB5D1900DEFA15 /* LoadingScene.m */,
+			);
+			name = Loading;
+			sourceTree = "<group>";
+		};
+		DF5C16B513D03C9400339CA1 /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				0348AEAA13CA1D32000D754A /* MainMenuScene.h */,
+				0348AEAB13CA1D32000D754A /* MainMenuScene.m */,
+			);
+			name = MainMenu;
+			sourceTree = "<group>";
+		};
+		DF5C16B613D03CA400339CA1 /* StoryMode */ = {
+			isa = PBXGroup;
+			children = (
+				039CB6FD13CAF21C00D9F7BE /* StoryModeScene.h */,
+				039CB6FE13CAF21C00D9F7BE /* StoryModeScene.m */,
+			);
+			name = StoryMode;
+			sourceTree = "<group>";
+		};
+		DF5C16B713D03CC500339CA1 /* StoryMode */ = {
+			isa = PBXGroup;
+			children = (
+				9BF13F5B13CED34200CE3964 /* Story_mode_play_but.png */,
+				9BF13F5813CECDAE00CE3964 /* Story_mode_screen.png */,
+			);
+			name = StoryMode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
