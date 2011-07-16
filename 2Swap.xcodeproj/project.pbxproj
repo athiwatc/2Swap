@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		032029BB13D15579001821D7 /* CCAnimationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 032029BA13D15579001821D7 /* CCAnimationHelper.m */; };
 		0348AEAC13CA1D32000D754A /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0348AEAB13CA1D32000D754A /* MainMenuScene.m */; };
 		0399563A13CDF7A100907657 /* 2swap_logo_low.png in Resources */ = {isa = PBXBuildFile; fileRef = 0399563613CDF7A100907657 /* 2swap_logo_low.png */; };
 		0399563B13CDF7A100907657 /* Challenge_mode_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 0399563713CDF7A100907657 /* Challenge_mode_but.png */; };
@@ -171,6 +172,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		032029B913D15579001821D7 /* CCAnimationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnimationHelper.h; sourceTree = "<group>"; };
+		032029BA13D15579001821D7 /* CCAnimationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAnimationHelper.m; sourceTree = "<group>"; };
 		0348AEAA13CA1D32000D754A /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
 		0348AEAB13CA1D32000D754A /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
 		0399563613CDF7A100907657 /* 2swap_logo_low.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2swap_logo_low.png; path = Resources/2swap_logo_low.png; sourceTree = "<group>"; };
@@ -515,6 +518,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		032029B413D1530F001821D7 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				032029B913D15579001821D7 /* CCAnimationHelper.h */,
+				032029BA13D15579001821D7 /* CCAnimationHelper.m */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
 		0348AEA813CA1CD5000D754A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,6 +545,7 @@
 		0348AEA913CA1CEE000D754A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				032029B413D1530F001821D7 /* Lib */,
 				DF5C16B613D03CA400339CA1 /* StoryMode */,
 				DF5C16B513D03C9400339CA1 /* MainMenu */,
 				DF5C16B313D03C8100339CA1 /* Loading */,
@@ -1305,6 +1318,7 @@
 				039CB6FB13CAF1A100D9F7BE /* IntroScene.m in Sources */,
 				039CB6FF13CAF21C00D9F7BE /* StoryModeScene.m in Sources */,
 				03C8AB5C13CB5D1900DEFA15 /* LoadingScene.m in Sources */,
+				032029BB13D15579001821D7 /* CCAnimationHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
