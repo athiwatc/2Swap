@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0311822C13F57D5200A14109 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0311822B13F57D5200A14109 /* Icon.png */; };
 		032029BB13D15579001821D7 /* CCAnimationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 032029BA13D15579001821D7 /* CCAnimationHelper.m */; };
 		0348AEAC13CA1D32000D754A /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0348AEAB13CA1D32000D754A /* MainMenuScene.m */; };
 		035AC49213F4F66300532F4F /* ColoredCircleSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 035AC48F13F4F66300532F4F /* ColoredCircleSprite.m */; };
@@ -183,6 +184,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0311822B13F57D5200A14109 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
 		032029B913D15579001821D7 /* CCAnimationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnimationHelper.h; sourceTree = "<group>"; };
 		032029BA13D15579001821D7 /* CCAnimationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAnimationHelper.m; sourceTree = "<group>"; };
 		0348AEAA13CA1D32000D754A /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
@@ -680,6 +682,7 @@
 		DF2AD98113C17B910075167F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0311822B13F57D5200A14109 /* Icon.png */,
 				DF5C16B713D03CC500339CA1 /* StoryMode */,
 				0399563613CDF7A100907657 /* 2swap_logo_low.png */,
 				0399563713CDF7A100907657 /* Challenge_mode_but.png */,
@@ -1242,6 +1245,7 @@
 				0399563D13CDF7A100907657 /* Story_mode_but.png in Resources */,
 				03A3E31F13D3DE8600245295 /* Story_mode_play_but.png in Resources */,
 				03A3E32013D3DE8600245295 /* Story_mode_screen.png in Resources */,
+				0311822C13F57D5200A14109 /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
