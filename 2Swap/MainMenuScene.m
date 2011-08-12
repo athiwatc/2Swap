@@ -7,6 +7,7 @@
 //
 
 #import "MainMenuScene.h"
+#import "GameScene.h"
 #import "StoryModeScene.h"
 
 @interface MainMenuScene (PrivateMethods)
@@ -79,6 +80,7 @@
 - (void) challengeModeTouched:(id)sender
 {
     CCLOG(@"Challenge_Mode Button touched : %@",sender);
+    [[CCDirector sharedDirector] replaceScene:[GameScene scene]];
 }
 
 - (void) hiScoreModeTouched:(id)sender

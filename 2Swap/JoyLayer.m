@@ -36,29 +36,66 @@
 		leftJoystick = [leftJoy.joystick retain];
 		[self addChild:leftJoy];
 		
-		SneakyButtonSkinnedBase *rightJumpBut = [[[SneakyButtonSkinnedBase alloc] init] autorelease];
-		rightJumpBut.position = ccp(455,64);
-		rightJumpBut.defaultSprite = [ColoredCircleSprite circleWithColor:ccc4(0, 30, 128, 255) radius:25];
-		rightJumpBut.activatedSprite = [ColoredCircleSprite circleWithColor:ccc4(255, 255, 255, 255) radius:25];
-		rightJumpBut.pressSprite = [ColoredCircleSprite circleWithColor:ccc4(255, 0, 0, 255) radius:25];
-		rightJumpBut.button = [[SneakyButton alloc] initWithRect:CGRectMake(0, 0, 64, 25)];
-		jumpButton = [rightJumpBut.button retain];
-		jumpButton.isToggleable = YES;
-		[self addChild:rightJumpBut];
+		SneakyButtonSkinnedBase *jumpBut = [[[SneakyButtonSkinnedBase alloc] init] autorelease];
+		jumpBut.position = ccp(455,64);
+		jumpBut.defaultSprite = [ColoredCircleSprite circleWithColor:ccc4(0, 30, 128, 255) radius:25];
+		jumpBut.activatedSprite = [ColoredCircleSprite circleWithColor:ccc4(255, 255, 255, 255) radius:25];
+		jumpBut.pressSprite = [ColoredCircleSprite circleWithColor:ccc4(255, 0, 0, 255) radius:25];
+		jumpBut.button = [[SneakyButton alloc] initWithRect:CGRectMake(0, 0, 64, 25)];
+		jumpButton = [jumpBut.button retain];
+		[self addChild:jumpBut];
         
         
-        SneakyButtonSkinnedBase *rightSwapBut = [[[SneakyButtonSkinnedBase alloc] init] autorelease];
-		rightSwapBut.position = ccp(400,32);
-		rightSwapBut.defaultSprite = [ColoredCircleSprite circleWithColor:ccc4(128, 0, 94, 255) radius:25];
-		rightSwapBut.activatedSprite = [ColoredCircleSprite circleWithColor:ccc4(255, 255, 255, 255) radius:25];
-		rightSwapBut.pressSprite = [ColoredCircleSprite circleWithColor:ccc4(255, 0, 0, 255) radius:25];
-		rightSwapBut.button = [[SneakyButton alloc] initWithRect:CGRectMake(0, 0, 64, 25)];
-		swapButton = [rightSwapBut.button retain];
-		swapButton.isToggleable = YES;
+        SneakyButtonSkinnedBase *swapBut = [[[SneakyButtonSkinnedBase alloc] init] autorelease];
+		swapBut.position = ccp(400,32);
+		swapBut.defaultSprite = [ColoredCircleSprite circleWithColor:ccc4(128, 0, 94, 255) radius:25];
+		swapBut.activatedSprite = [ColoredCircleSprite circleWithColor:ccc4(255, 255, 255, 255) radius:25];
+		swapBut.pressSprite = [ColoredCircleSprite circleWithColor:ccc4(255, 0, 0, 255) radius:25];
+		swapBut.button = [[SneakyButton alloc] initWithRect:CGRectMake(0, 0, 64, 25)];
+		swapButton = [swapBut.button retain];
         
-		[self addChild:rightSwapBut];
+		[self addChild:swapBut];
+        [self scheduleUpdate];
     }
     return self;
+}
+
+-(void) update:(ccTime)delta
+{
+	totalTime += delta;
+    
+	//Swap Action
+	if (swapButton.active && totalTime > nextSwapTime)
+	{
+		nextSwapTime = totalTime + 1.0f;
+        
+	}
+    
+    if (jumpButton.active && totalTime > nextJumpTime)
+	{
+		nextSwapTime = totalTime + 1.0f;
+	}
+
+	
+	// Allow faster shooting by quickly tapping the fire button.
+	if (swapButton.active == NO)
+	{
+		nextSwapTime = 0;
+	}
+    
+    if (jumpButton.active == NO) {
+        nextJumpTime = 0;
+    }
+    
+	// Moving the ship with the thumbstick.
+	/*GameScene* game = [GameScene sharedGameScene];
+	Ship* ship = [game defaultShip];
+	
+	CGPoint velocity = ccpMult(joystick.velocity, 200);
+	if (velocity.x != 0 && velocity.y != 0)
+	{
+		ship.position = CGPointMake(ship.position.x + velocity.x * delta, ship.position.y + velocity.y * delta);
+	}*/
 }
 
 -(void) dealloc {

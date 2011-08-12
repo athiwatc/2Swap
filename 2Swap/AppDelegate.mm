@@ -11,7 +11,7 @@
 #import "AppDelegate.h"
 #import "GameConfig.h"
 #import "IntroScene.h"
-#import "JoyLayer.h"
+#import "GameScene.h"
 #import "RootViewController.h"
 
 @implementation AppDelegate
@@ -112,7 +112,7 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene: [JoyLayer scene]];
+	[[CCDirector sharedDirector] runWithScene: [IntroScene scene]];
 }
 
 

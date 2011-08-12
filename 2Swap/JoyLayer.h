@@ -17,6 +17,9 @@
     SneakyJoystick *leftJoystick;
     SneakyButton *jumpButton;
     SneakyButton *swapButton;
+    ccTime totalTime;
+    ccTime nextJumpTime;
+	ccTime nextSwapTime;
 }
 
 +(id) scene;
