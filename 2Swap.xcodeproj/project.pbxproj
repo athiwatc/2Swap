@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		032029BB13D15579001821D7 /* CCAnimationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 032029BA13D15579001821D7 /* CCAnimationHelper.m */; };
 		0348AEAC13CA1D32000D754A /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0348AEAB13CA1D32000D754A /* MainMenuScene.m */; };
+		035AC49213F4F66300532F4F /* ColoredCircleSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 035AC48F13F4F66300532F4F /* ColoredCircleSprite.m */; };
+		035AC49313F4F66300532F4F /* ColoredSquareSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 035AC49113F4F66300532F4F /* ColoredSquareSprite.m */; };
+		035AC49913F4F6BD00532F4F /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 035AC49613F4F6BD00532F4F /* SneakyJoystick.m */; };
+		035AC49A13F4F6BD00532F4F /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 035AC49813F4F6BD00532F4F /* SneakyJoystickSkinnedBase.m */; };
+		035AC49D13F4F6D300532F4F /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 035AC49C13F4F6D300532F4F /* SneakyButtonSkinnedBase.m */; };
 		0399563A13CDF7A100907657 /* 2swap_logo_low.png in Resources */ = {isa = PBXBuildFile; fileRef = 0399563613CDF7A100907657 /* 2swap_logo_low.png */; };
 		0399563B13CDF7A100907657 /* Challenge_mode_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 0399563713CDF7A100907657 /* Challenge_mode_but.png */; };
 		0399563C13CDF7A100907657 /* Hiscore_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 0399563813CDF7A100907657 /* Hiscore_but.png */; };
@@ -176,6 +181,16 @@
 		032029BA13D15579001821D7 /* CCAnimationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAnimationHelper.m; sourceTree = "<group>"; };
 		0348AEAA13CA1D32000D754A /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
 		0348AEAB13CA1D32000D754A /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
+		035AC48E13F4F66300532F4F /* ColoredCircleSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColoredCircleSprite.h; path = SneakyInput/ColoredCircleSprite.h; sourceTree = "<group>"; };
+		035AC48F13F4F66300532F4F /* ColoredCircleSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColoredCircleSprite.m; path = SneakyInput/ColoredCircleSprite.m; sourceTree = "<group>"; };
+		035AC49013F4F66300532F4F /* ColoredSquareSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColoredSquareSprite.h; path = SneakyInput/ColoredSquareSprite.h; sourceTree = "<group>"; };
+		035AC49113F4F66300532F4F /* ColoredSquareSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColoredSquareSprite.m; path = SneakyInput/ColoredSquareSprite.m; sourceTree = "<group>"; };
+		035AC49513F4F6BD00532F4F /* SneakyJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SneakyJoystick.h; path = SneakyInput/SneakyJoystick.h; sourceTree = "<group>"; };
+		035AC49613F4F6BD00532F4F /* SneakyJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SneakyJoystick.m; path = SneakyInput/SneakyJoystick.m; sourceTree = "<group>"; };
+		035AC49713F4F6BD00532F4F /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SneakyJoystickSkinnedBase.h; path = SneakyInput/SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
+		035AC49813F4F6BD00532F4F /* SneakyJoystickSkinnedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SneakyJoystickSkinnedBase.m; path = SneakyInput/SneakyJoystickSkinnedBase.m; sourceTree = "<group>"; };
+		035AC49B13F4F6D300532F4F /* SneakyButtonSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SneakyButtonSkinnedBase.h; path = SneakyInput/SneakyButtonSkinnedBase.h; sourceTree = "<group>"; };
+		035AC49C13F4F6D300532F4F /* SneakyButtonSkinnedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SneakyButtonSkinnedBase.m; path = SneakyInput/SneakyButtonSkinnedBase.m; sourceTree = "<group>"; };
 		0399563613CDF7A100907657 /* 2swap_logo_low.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2swap_logo_low.png; path = Resources/2swap_logo_low.png; sourceTree = "<group>"; };
 		0399563713CDF7A100907657 /* Challenge_mode_but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Challenge_mode_but.png; path = Resources/Challenge_mode_but.png; sourceTree = "<group>"; };
 		0399563813CDF7A100907657 /* Hiscore_but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Hiscore_but.png; path = Resources/Hiscore_but.png; sourceTree = "<group>"; };
@@ -545,6 +560,7 @@
 		0348AEA913CA1CEE000D754A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				035AC48413F4F4DC00532F4F /* SneakyInput */,
 				032029B413D1530F001821D7 /* Lib */,
 				DF5C16B613D03CA400339CA1 /* StoryMode */,
 				DF5C16B513D03C9400339CA1 /* MainMenu */,
@@ -552,6 +568,23 @@
 				03D2935013CB497900FEDFF9 /* Intro */,
 			);
 			name = Scenes;
+			sourceTree = "<group>";
+		};
+		035AC48413F4F4DC00532F4F /* SneakyInput */ = {
+			isa = PBXGroup;
+			children = (
+				035AC49B13F4F6D300532F4F /* SneakyButtonSkinnedBase.h */,
+				035AC49C13F4F6D300532F4F /* SneakyButtonSkinnedBase.m */,
+				035AC49513F4F6BD00532F4F /* SneakyJoystick.h */,
+				035AC49613F4F6BD00532F4F /* SneakyJoystick.m */,
+				035AC49713F4F6BD00532F4F /* SneakyJoystickSkinnedBase.h */,
+				035AC49813F4F6BD00532F4F /* SneakyJoystickSkinnedBase.m */,
+				035AC48E13F4F66300532F4F /* ColoredCircleSprite.h */,
+				035AC48F13F4F66300532F4F /* ColoredCircleSprite.m */,
+				035AC49013F4F66300532F4F /* ColoredSquareSprite.h */,
+				035AC49113F4F66300532F4F /* ColoredSquareSprite.m */,
+			);
+			name = SneakyInput;
 			sourceTree = "<group>";
 		};
 		03D2935013CB497900FEDFF9 /* Intro */ = {
@@ -1319,6 +1352,11 @@
 				039CB6FF13CAF21C00D9F7BE /* StoryModeScene.m in Sources */,
 				03C8AB5C13CB5D1900DEFA15 /* LoadingScene.m in Sources */,
 				032029BB13D15579001821D7 /* CCAnimationHelper.m in Sources */,
+				035AC49213F4F66300532F4F /* ColoredCircleSprite.m in Sources */,
+				035AC49313F4F66300532F4F /* ColoredSquareSprite.m in Sources */,
+				035AC49913F4F6BD00532F4F /* SneakyJoystick.m in Sources */,
+				035AC49A13F4F6BD00532F4F /* SneakyJoystickSkinnedBase.m in Sources */,
+				035AC49D13F4F6D300532F4F /* SneakyButtonSkinnedBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
