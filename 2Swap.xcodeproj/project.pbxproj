@@ -20,6 +20,12 @@
 		0399563D13CDF7A100907657 /* Story_mode_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 0399563913CDF7A100907657 /* Story_mode_but.png */; };
 		039CB6FB13CAF1A100D9F7BE /* IntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CB6FA13CAF1A100D9F7BE /* IntroScene.m */; };
 		039CB6FF13CAF21C00D9F7BE /* StoryModeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CB6FE13CAF21C00D9F7BE /* StoryModeScene.m */; };
+		03A073E213F4FAFF00BB6FFD /* JoyLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A073E113F4FAFF00BB6FFD /* JoyLayer.m */; };
+		03A073EE13F4FF1B00BB6FFD /* HelloWorldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A073E513F4FF1B00BB6FFD /* HelloWorldScene.m */; };
+		03A073EF13F4FF1B00BB6FFD /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A073E713F4FF1B00BB6FFD /* SneakyButton.m */; };
+		03A073F013F4FF1B00BB6FFD /* SneakyInput_0_4_0AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A073E913F4FF1B00BB6FFD /* SneakyInput_0_4_0AppDelegate.m */; };
+		03A073F113F4FF1B00BB6FFD /* SneakyJoystickSkinnedDPadExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A073EB13F4FF1B00BB6FFD /* SneakyJoystickSkinnedDPadExample.m */; };
+		03A073F213F4FF1B00BB6FFD /* SneakyJoystickSkinnedJoystickExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A073ED13F4FF1B00BB6FFD /* SneakyJoystickSkinnedJoystickExample.m */; };
 		03A3E31F13D3DE8600245295 /* Story_mode_play_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A3E31D13D3DE8600245295 /* Story_mode_play_but.png */; };
 		03A3E32013D3DE8600245295 /* Story_mode_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A3E31E13D3DE8600245295 /* Story_mode_screen.png */; };
 		03C8AB5C13CB5D1900DEFA15 /* LoadingScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C8AB5B13CB5D1900DEFA15 /* LoadingScene.m */; };
@@ -199,6 +205,18 @@
 		039CB6FA13CAF1A100D9F7BE /* IntroScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroScene.m; sourceTree = "<group>"; };
 		039CB6FD13CAF21C00D9F7BE /* StoryModeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryModeScene.h; sourceTree = "<group>"; };
 		039CB6FE13CAF21C00D9F7BE /* StoryModeScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryModeScene.m; sourceTree = "<group>"; };
+		03A073E013F4FAFF00BB6FFD /* JoyLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoyLayer.h; sourceTree = "<group>"; };
+		03A073E113F4FAFF00BB6FFD /* JoyLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoyLayer.m; sourceTree = "<group>"; };
+		03A073E413F4FF1B00BB6FFD /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = SneakyInput/HelloWorldScene.h; sourceTree = "<group>"; };
+		03A073E513F4FF1B00BB6FFD /* HelloWorldScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelloWorldScene.m; path = SneakyInput/HelloWorldScene.m; sourceTree = "<group>"; };
+		03A073E613F4FF1B00BB6FFD /* SneakyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SneakyButton.h; path = SneakyInput/SneakyButton.h; sourceTree = "<group>"; };
+		03A073E713F4FF1B00BB6FFD /* SneakyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SneakyButton.m; path = SneakyInput/SneakyButton.m; sourceTree = "<group>"; };
+		03A073E813F4FF1B00BB6FFD /* SneakyInput_0_4_0AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SneakyInput_0_4_0AppDelegate.h; path = SneakyInput/SneakyInput_0_4_0AppDelegate.h; sourceTree = "<group>"; };
+		03A073E913F4FF1B00BB6FFD /* SneakyInput_0_4_0AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SneakyInput_0_4_0AppDelegate.m; path = SneakyInput/SneakyInput_0_4_0AppDelegate.m; sourceTree = "<group>"; };
+		03A073EA13F4FF1B00BB6FFD /* SneakyJoystickSkinnedDPadExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SneakyJoystickSkinnedDPadExample.h; path = SneakyInput/SneakyJoystickSkinnedDPadExample.h; sourceTree = "<group>"; };
+		03A073EB13F4FF1B00BB6FFD /* SneakyJoystickSkinnedDPadExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SneakyJoystickSkinnedDPadExample.m; path = SneakyInput/SneakyJoystickSkinnedDPadExample.m; sourceTree = "<group>"; };
+		03A073EC13F4FF1B00BB6FFD /* SneakyJoystickSkinnedJoystickExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SneakyJoystickSkinnedJoystickExample.h; path = SneakyInput/SneakyJoystickSkinnedJoystickExample.h; sourceTree = "<group>"; };
+		03A073ED13F4FF1B00BB6FFD /* SneakyJoystickSkinnedJoystickExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SneakyJoystickSkinnedJoystickExample.m; path = SneakyInput/SneakyJoystickSkinnedJoystickExample.m; sourceTree = "<group>"; };
 		03A3E31D13D3DE8600245295 /* Story_mode_play_but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Story_mode_play_but.png; path = Resources/Story_mode_play_but.png; sourceTree = "<group>"; };
 		03A3E31E13D3DE8600245295 /* Story_mode_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Story_mode_screen.png; path = Resources/Story_mode_screen.png; sourceTree = "<group>"; };
 		03C8AB5A13CB5D1900DEFA15 /* LoadingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingScene.h; sourceTree = "<group>"; };
@@ -560,6 +578,7 @@
 		0348AEA913CA1CEE000D754A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				035AC49E13F4F7C800532F4F /* GameScene */,
 				035AC48413F4F4DC00532F4F /* SneakyInput */,
 				032029B413D1530F001821D7 /* Lib */,
 				DF5C16B613D03CA400339CA1 /* StoryMode */,
@@ -573,6 +592,16 @@
 		035AC48413F4F4DC00532F4F /* SneakyInput */ = {
 			isa = PBXGroup;
 			children = (
+				03A073E413F4FF1B00BB6FFD /* HelloWorldScene.h */,
+				03A073E513F4FF1B00BB6FFD /* HelloWorldScene.m */,
+				03A073E613F4FF1B00BB6FFD /* SneakyButton.h */,
+				03A073E713F4FF1B00BB6FFD /* SneakyButton.m */,
+				03A073E813F4FF1B00BB6FFD /* SneakyInput_0_4_0AppDelegate.h */,
+				03A073E913F4FF1B00BB6FFD /* SneakyInput_0_4_0AppDelegate.m */,
+				03A073EA13F4FF1B00BB6FFD /* SneakyJoystickSkinnedDPadExample.h */,
+				03A073EB13F4FF1B00BB6FFD /* SneakyJoystickSkinnedDPadExample.m */,
+				03A073EC13F4FF1B00BB6FFD /* SneakyJoystickSkinnedJoystickExample.h */,
+				03A073ED13F4FF1B00BB6FFD /* SneakyJoystickSkinnedJoystickExample.m */,
 				035AC49B13F4F6D300532F4F /* SneakyButtonSkinnedBase.h */,
 				035AC49C13F4F6D300532F4F /* SneakyButtonSkinnedBase.m */,
 				035AC49513F4F6BD00532F4F /* SneakyJoystick.h */,
@@ -585,6 +614,15 @@
 				035AC49113F4F66300532F4F /* ColoredSquareSprite.m */,
 			);
 			name = SneakyInput;
+			sourceTree = "<group>";
+		};
+		035AC49E13F4F7C800532F4F /* GameScene */ = {
+			isa = PBXGroup;
+			children = (
+				03A073E013F4FAFF00BB6FFD /* JoyLayer.h */,
+				03A073E113F4FAFF00BB6FFD /* JoyLayer.m */,
+			);
+			name = GameScene;
 			sourceTree = "<group>";
 		};
 		03D2935013CB497900FEDFF9 /* Intro */ = {
@@ -1357,6 +1395,12 @@
 				035AC49913F4F6BD00532F4F /* SneakyJoystick.m in Sources */,
 				035AC49A13F4F6BD00532F4F /* SneakyJoystickSkinnedBase.m in Sources */,
 				035AC49D13F4F6D300532F4F /* SneakyButtonSkinnedBase.m in Sources */,
+				03A073E213F4FAFF00BB6FFD /* JoyLayer.m in Sources */,
+				03A073EE13F4FF1B00BB6FFD /* HelloWorldScene.m in Sources */,
+				03A073EF13F4FF1B00BB6FFD /* SneakyButton.m in Sources */,
+				03A073F013F4FF1B00BB6FFD /* SneakyInput_0_4_0AppDelegate.m in Sources */,
+				03A073F113F4FF1B00BB6FFD /* SneakyJoystickSkinnedDPadExample.m in Sources */,
+				03A073F213F4FF1B00BB6FFD /* SneakyJoystickSkinnedJoystickExample.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
