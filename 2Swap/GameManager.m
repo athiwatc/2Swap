@@ -7,7 +7,9 @@
 //
 
 #import "GameManager.h"
-
+#import "MainMenuScene.h"
+#import "OptionsScene.h"
+#import "CreditsScene.h"
 
 @implementation GameManager
 static GameManager* _sharedGameManager = nil;                      // 1
@@ -61,10 +63,13 @@ static GameManager* _sharedGameManager = nil;                      // 1
     id sceneToRun = nil;
     switch (sceneID) {
         case kMainMenuScene: 
+            sceneToRun = [MainMenuScene node];
             break;
         case kOptionsScene:
+            sceneToRun = [OptionsScene node];
             break;
         case kCreditsScene:
+            sceneToRun = [CreditsScene node];
             break;
         case kIntroScene:
             break;
@@ -110,8 +115,8 @@ static GameManager* _sharedGameManager = nil;                      // 1
                 CCLOG(@"GameMgr:Scaling for iPhone 4 (retina)");
                 
             } else {
-                [sceneToRun setScaleX:0.4688f];
-                [sceneToRun setScaleY:0.4166f];
+                /*[sceneToRun setScaleX:0.4688f];
+                [sceneToRun setScaleY:0.4166f];*/
                 CCLOG(@"GameMgr:Scaling for iPhone 3GS or older (non-retina)");
                 
             }

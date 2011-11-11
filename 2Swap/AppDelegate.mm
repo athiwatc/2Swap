@@ -7,7 +7,7 @@
 //
 
 #import "cocos2d.h"
-
+#import "GameManager.h"
 #import "AppDelegate.h"
 #import "GameConfig.h"
 #import "RootViewController.h"
@@ -110,7 +110,7 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene: [HelloWorldLayer scene]];
+    [[GameManager sharedGameManager] runSceneWithID:kMainMenuScene];
 }
 
 

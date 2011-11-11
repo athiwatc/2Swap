@@ -167,6 +167,29 @@
 		031207151463F09D0009FD90 /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0312070C1463F09D0009FD90 /* SneakyButtonSkinnedBase.m */; };
 		031207161463F09D0009FD90 /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 0312070E1463F09D0009FD90 /* SneakyJoystick.m */; };
 		031207171463F09D0009FD90 /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 031207101463F09D0009FD90 /* SneakyJoystickSkinnedBase.m */; };
+		0312072414640CE10009FD90 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0312072114640CE00009FD90 /* MainMenuScene.m */; };
+		0312072514640CE10009FD90 /* MainMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0312072314640CE10009FD90 /* MainMenuLayer.m */; };
+		0312072B14640D940009FD90 /* OptionsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0312072814640D940009FD90 /* OptionsLayer.m */; };
+		0312072C14640D940009FD90 /* OptionsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0312072A14640D940009FD90 /* OptionsScene.m */; };
+		0312073214640DEF0009FD90 /* CreditsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0312072F14640DEF0009FD90 /* CreditsLayer.m */; };
+		0312073314640DEF0009FD90 /* CreditsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0312073114640DEF0009FD90 /* CreditsScene.m */; };
+		03459845146D4CEB00FA89D5 /* 2swap_logo_low.png in Resources */ = {isa = PBXBuildFile; fileRef = 03459835146D4CEB00FA89D5 /* 2swap_logo_low.png */; };
+		03459846146D4CEB00FA89D5 /* CreditsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 03459836146D4CEB00FA89D5 /* CreditsButton.png */; };
+		03459847146D4CEB00FA89D5 /* GameCenterButton_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 03459837146D4CEB00FA89D5 /* GameCenterButton_press.png */; };
+		03459848146D4CEB00FA89D5 /* GameCenterButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 03459838146D4CEB00FA89D5 /* GameCenterButton.png */; };
+		03459849146D4CEB00FA89D5 /* MainMenuBg_Layer1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03459839146D4CEB00FA89D5 /* MainMenuBg_Layer1.png */; };
+		0345984A146D4CEB00FA89D5 /* MainMenuBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0345983A146D4CEB00FA89D5 /* MainMenuBg.png */; };
+		0345984B146D4CEB00FA89D5 /* MusicLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = 0345983B146D4CEB00FA89D5 /* MusicLabel.png */; };
+		0345984C146D4CEB00FA89D5 /* OffButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0345983C146D4CEB00FA89D5 /* OffButton.png */; };
+		0345984D146D4CEB00FA89D5 /* OnButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0345983D146D4CEB00FA89D5 /* OnButton.png */; };
+		0345984E146D4CEB00FA89D5 /* OptionMenuLayout.png in Resources */ = {isa = PBXBuildFile; fileRef = 0345983E146D4CEB00FA89D5 /* OptionMenuLayout.png */; };
+		0345984F146D4CEB00FA89D5 /* OptionsButton_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 0345983F146D4CEB00FA89D5 /* OptionsButton_press.png */; };
+		03459850146D4CEB00FA89D5 /* OptionsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 03459840146D4CEB00FA89D5 /* OptionsButton.png */; };
+		03459851146D4CEB00FA89D5 /* PlayButton_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 03459841146D4CEB00FA89D5 /* PlayButton_press.png */; };
+		03459852146D4CEB00FA89D5 /* PlayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 03459842146D4CEB00FA89D5 /* PlayButton.png */; };
+		03459853146D4CEB00FA89D5 /* SoundFXLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = 03459843146D4CEB00FA89D5 /* SoundFXLabel.png */; };
+		03459854146D4CEB00FA89D5 /* WebSiteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 03459844146D4CEB00FA89D5 /* WebSiteButton.png */; };
+		03459856146D5AC100FA89D5 /* BackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 03459855146D5AC100FA89D5 /* BackButton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -498,6 +521,35 @@
 		0312070E1463F09D0009FD90 /* SneakyJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystick.m; sourceTree = "<group>"; };
 		0312070F1463F09D0009FD90 /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
 		031207101463F09D0009FD90 /* SneakyJoystickSkinnedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedBase.m; sourceTree = "<group>"; };
+		0312072014640CE00009FD90 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
+		0312072114640CE00009FD90 /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
+		0312072214640CE10009FD90 /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuLayer.h; sourceTree = "<group>"; };
+		0312072314640CE10009FD90 /* MainMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuLayer.m; sourceTree = "<group>"; };
+		0312072714640D940009FD90 /* OptionsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsLayer.h; sourceTree = "<group>"; };
+		0312072814640D940009FD90 /* OptionsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsLayer.m; sourceTree = "<group>"; };
+		0312072914640D940009FD90 /* OptionsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsScene.h; sourceTree = "<group>"; };
+		0312072A14640D940009FD90 /* OptionsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsScene.m; sourceTree = "<group>"; };
+		0312072E14640DEF0009FD90 /* CreditsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsLayer.h; sourceTree = "<group>"; };
+		0312072F14640DEF0009FD90 /* CreditsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsLayer.m; sourceTree = "<group>"; };
+		0312073014640DEF0009FD90 /* CreditsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsScene.h; sourceTree = "<group>"; };
+		0312073114640DEF0009FD90 /* CreditsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsScene.m; sourceTree = "<group>"; };
+		03459835146D4CEB00FA89D5 /* 2swap_logo_low.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2swap_logo_low.png; sourceTree = "<group>"; };
+		03459836146D4CEB00FA89D5 /* CreditsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CreditsButton.png; sourceTree = "<group>"; };
+		03459837146D4CEB00FA89D5 /* GameCenterButton_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameCenterButton_press.png; sourceTree = "<group>"; };
+		03459838146D4CEB00FA89D5 /* GameCenterButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameCenterButton.png; sourceTree = "<group>"; };
+		03459839146D4CEB00FA89D5 /* MainMenuBg_Layer1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainMenuBg_Layer1.png; sourceTree = "<group>"; };
+		0345983A146D4CEB00FA89D5 /* MainMenuBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainMenuBg.png; sourceTree = "<group>"; };
+		0345983B146D4CEB00FA89D5 /* MusicLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MusicLabel.png; sourceTree = "<group>"; };
+		0345983C146D4CEB00FA89D5 /* OffButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OffButton.png; sourceTree = "<group>"; };
+		0345983D146D4CEB00FA89D5 /* OnButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnButton.png; sourceTree = "<group>"; };
+		0345983E146D4CEB00FA89D5 /* OptionMenuLayout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OptionMenuLayout.png; sourceTree = "<group>"; };
+		0345983F146D4CEB00FA89D5 /* OptionsButton_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OptionsButton_press.png; sourceTree = "<group>"; };
+		03459840146D4CEB00FA89D5 /* OptionsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OptionsButton.png; sourceTree = "<group>"; };
+		03459841146D4CEB00FA89D5 /* PlayButton_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayButton_press.png; sourceTree = "<group>"; };
+		03459842146D4CEB00FA89D5 /* PlayButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayButton.png; sourceTree = "<group>"; };
+		03459843146D4CEB00FA89D5 /* SoundFXLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SoundFXLabel.png; sourceTree = "<group>"; };
+		03459844146D4CEB00FA89D5 /* WebSiteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WebSiteButton.png; sourceTree = "<group>"; };
+		03459855146D5AC100FA89D5 /* BackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackButton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -566,6 +618,7 @@
 		031205191463E0960009FD90 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0312073414643DB80009FD90 /* Images */,
 				0312051A1463E0960009FD90 /* Default.png */,
 				0312051C1463E0960009FD90 /* fps_images.png */,
 				0312051E1463E0960009FD90 /* Icon-72.png */,
@@ -1059,6 +1112,9 @@
 		031206F41463E4E80009FD90 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0312072D14640DCE0009FD90 /* Credits */,
+				0312072614640CEC0009FD90 /* Options */,
+				0312071914640C480009FD90 /* MainMenu */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -1099,6 +1155,72 @@
 				031207101463F09D0009FD90 /* SneakyJoystickSkinnedBase.m */,
 			);
 			name = JoystickClasses;
+			sourceTree = "<group>";
+		};
+		0312071914640C480009FD90 /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				0312072014640CE00009FD90 /* MainMenuScene.h */,
+				0312072114640CE00009FD90 /* MainMenuScene.m */,
+				0312072214640CE10009FD90 /* MainMenuLayer.h */,
+				0312072314640CE10009FD90 /* MainMenuLayer.m */,
+			);
+			name = MainMenu;
+			sourceTree = "<group>";
+		};
+		0312072614640CEC0009FD90 /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				0312072714640D940009FD90 /* OptionsLayer.h */,
+				0312072814640D940009FD90 /* OptionsLayer.m */,
+				0312072914640D940009FD90 /* OptionsScene.h */,
+				0312072A14640D940009FD90 /* OptionsScene.m */,
+			);
+			name = Options;
+			sourceTree = "<group>";
+		};
+		0312072D14640DCE0009FD90 /* Credits */ = {
+			isa = PBXGroup;
+			children = (
+				0312072E14640DEF0009FD90 /* CreditsLayer.h */,
+				0312072F14640DEF0009FD90 /* CreditsLayer.m */,
+				0312073014640DEF0009FD90 /* CreditsScene.h */,
+				0312073114640DEF0009FD90 /* CreditsScene.m */,
+			);
+			name = Credits;
+			sourceTree = "<group>";
+		};
+		0312073414643DB80009FD90 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				03459834146D49C900FA89D5 /* MainMenuScene */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		03459834146D49C900FA89D5 /* MainMenuScene */ = {
+			isa = PBXGroup;
+			children = (
+				03459855146D5AC100FA89D5 /* BackButton.png */,
+				03459835146D4CEB00FA89D5 /* 2swap_logo_low.png */,
+				03459836146D4CEB00FA89D5 /* CreditsButton.png */,
+				03459837146D4CEB00FA89D5 /* GameCenterButton_press.png */,
+				03459838146D4CEB00FA89D5 /* GameCenterButton.png */,
+				03459839146D4CEB00FA89D5 /* MainMenuBg_Layer1.png */,
+				0345983A146D4CEB00FA89D5 /* MainMenuBg.png */,
+				0345983B146D4CEB00FA89D5 /* MusicLabel.png */,
+				0345983C146D4CEB00FA89D5 /* OffButton.png */,
+				0345983D146D4CEB00FA89D5 /* OnButton.png */,
+				0345983E146D4CEB00FA89D5 /* OptionMenuLayout.png */,
+				0345983F146D4CEB00FA89D5 /* OptionsButton_press.png */,
+				03459840146D4CEB00FA89D5 /* OptionsButton.png */,
+				03459841146D4CEB00FA89D5 /* PlayButton_press.png */,
+				03459842146D4CEB00FA89D5 /* PlayButton.png */,
+				03459843146D4CEB00FA89D5 /* SoundFXLabel.png */,
+				03459844146D4CEB00FA89D5 /* WebSiteButton.png */,
+			);
+			name = MainMenuScene;
+			path = Resources/MainMenuScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1162,6 +1284,23 @@
 				0312052C1463E0960009FD90 /* iTunesArtwork in Resources */,
 				031206EB1463E09A0009FD90 /* blocks.png in Resources */,
 				031207131463F09D0009FD90 /* LICENSE in Resources */,
+				03459845146D4CEB00FA89D5 /* 2swap_logo_low.png in Resources */,
+				03459846146D4CEB00FA89D5 /* CreditsButton.png in Resources */,
+				03459847146D4CEB00FA89D5 /* GameCenterButton_press.png in Resources */,
+				03459848146D4CEB00FA89D5 /* GameCenterButton.png in Resources */,
+				03459849146D4CEB00FA89D5 /* MainMenuBg_Layer1.png in Resources */,
+				0345984A146D4CEB00FA89D5 /* MainMenuBg.png in Resources */,
+				0345984B146D4CEB00FA89D5 /* MusicLabel.png in Resources */,
+				0345984C146D4CEB00FA89D5 /* OffButton.png in Resources */,
+				0345984D146D4CEB00FA89D5 /* OnButton.png in Resources */,
+				0345984E146D4CEB00FA89D5 /* OptionMenuLayout.png in Resources */,
+				0345984F146D4CEB00FA89D5 /* OptionsButton_press.png in Resources */,
+				03459850146D4CEB00FA89D5 /* OptionsButton.png in Resources */,
+				03459851146D4CEB00FA89D5 /* PlayButton_press.png in Resources */,
+				03459852146D4CEB00FA89D5 /* PlayButton.png in Resources */,
+				03459853146D4CEB00FA89D5 /* SoundFXLabel.png in Resources */,
+				03459854146D4CEB00FA89D5 /* WebSiteButton.png in Resources */,
+				03459856146D5AC100FA89D5 /* BackButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1313,6 +1452,12 @@
 				031207151463F09D0009FD90 /* SneakyButtonSkinnedBase.m in Sources */,
 				031207161463F09D0009FD90 /* SneakyJoystick.m in Sources */,
 				031207171463F09D0009FD90 /* SneakyJoystickSkinnedBase.m in Sources */,
+				0312072414640CE10009FD90 /* MainMenuScene.m in Sources */,
+				0312072514640CE10009FD90 /* MainMenuLayer.m in Sources */,
+				0312072B14640D940009FD90 /* OptionsLayer.m in Sources */,
+				0312072C14640D940009FD90 /* OptionsScene.m in Sources */,
+				0312073214640DEF0009FD90 /* CreditsLayer.m in Sources */,
+				0312073314640DEF0009FD90 /* CreditsScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1408,6 +1553,7 @@
 				031206F01463E09A0009FD90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
