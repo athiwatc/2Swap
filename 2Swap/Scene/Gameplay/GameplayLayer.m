@@ -224,7 +224,7 @@
 -(id)init {
     self = [super init];
     if (self != nil) {
-        CGSize screenSize = [CCDirector sharedDirector].winSize; 
+        //CGSize screenSize = [CCDirector sharedDirector].winSize; 
         // enable touches
         self.isTouchEnabled = YES; 
         

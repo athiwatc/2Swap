@@ -41,44 +41,44 @@
 		
 		//Background
         CCSprite *background = 
-        [CCSprite spriteWithFile:@"MainMenuBg.png"];
+        [CCSprite spriteWithFile:@"MainMenuBg-iPhone.png"];
         [background setPosition:ccp(screenSize.width/2, 
                                     screenSize.height/2)];
         [self addChild:background];
         CCSprite *background_layer1 = 
-        [CCSprite spriteWithFile:@"MainMenuBg_Layer1.png"];
+        [CCSprite spriteWithFile:@"MainMenuBg_Layer1-iPhone.png"];
         [background_layer1 setPosition:ccp(screenSize.width/2, 
                                            screenSize.height * 0.35f)];
         [self addChild:background_layer1];		
         
         CCSprite *optionMenuLayout = 
-        [CCSprite spriteWithFile:@"OptionMenuLayout.png"];
+        [CCSprite spriteWithFile:@"OptionMenuLayout-iPhone.png"];
         [optionMenuLayout setPosition:ccp(screenSize.width/2, 
                                           screenSize.height * 0.55f)];
         [self addChild:optionMenuLayout];
 
         
 		CCMenuItemImage *musicOnLabel = [CCMenuItemImage 
-                                           itemFromNormalImage:@"OnButton.png" 
-                                           selectedImage:@"OnButton.png" 
+                                           itemFromNormalImage:@"OnButton-iPhone.png" 
+                                           selectedImage:@"OnButton-iPhone.png" 
                                            disabledImage:nil 
                                            target:self 
                                          selector:nil];
 		CCMenuItemImage *musicOffLabel = [CCMenuItemImage 
-                                         itemFromNormalImage:@"OffButton.png" 
-                                         selectedImage:@"OffButton.png" 
+                                         itemFromNormalImage:@"OffButton-iPhone.png" 
+                                         selectedImage:@"OffButton-iPhone.png" 
                                          disabledImage:nil 
                                          target:self 
                                          selector:nil];
         CCMenuItemImage *SFXOnLabel = [CCMenuItemImage 
-                                         itemFromNormalImage:@"OnButton.png" 
-                                         selectedImage:@"OnButton.png" 
+                                         itemFromNormalImage:@"OnButton-iPhone.png" 
+                                         selectedImage:@"OnButton-iPhone.png" 
                                          disabledImage:nil 
                                          target:self 
                                          selector:nil];
 		CCMenuItemImage *SFXOffLabel = [CCMenuItemImage 
-                                          itemFromNormalImage:@"OffButton.png" 
-                                          selectedImage:@"OffButton.png" 
+                                          itemFromNormalImage:@"OffButton-iPhone.png" 
+                                          selectedImage:@"OffButton-iPhone.png" 
                                           disabledImage:nil 
                                           target:self 
                                           selector:nil];
@@ -92,8 +92,8 @@
 																   items:SFXOnLabel,SFXOffLabel,nil];
 		
         CCMenuItemImage *backButton = [CCMenuItemImage 
-                                        itemFromNormalImage:@"BackButton.png" 
-                                        selectedImage:@"BackButton.png" 
+                                        itemFromNormalImage:@"BackButton-iPhone.png" 
+                                        selectedImage:@"BackButton-iPhone.png" 
                                         disabledImage:nil 
                                         target:self 
                                         selector:@selector(returnToMainMenu)];
@@ -102,8 +102,16 @@
 							   SFXToggle,nil];
         CCMenu *backMenu = [CCMenu menuWithItems:backButton, nil];
 		[optionsMenu alignItemsVerticallyWithPadding:20.0f];
-		[optionsMenu setPosition:ccp(screenSize.width * 0.65f, screenSize.height*0.45f)];
+		[optionsMenu setPosition:ccp(screenSize.width * 0.67f, screenSize.height*0.45f)];
 		[self addChild:optionsMenu];
+        
+        CCSprite *soundFXLabel = [CCSprite spriteWithFile:@"SoundFXLabel-iPhone.png"];
+        [soundFXLabel setPosition:ccp(screenSize.width * 0.32f, screenSize.height*0.37f)];
+        [self addChild:soundFXLabel];
+        
+        CCSprite *musicLabel = [CCSprite spriteWithFile:@"MusicLabel-iPhone.png"];
+        [musicLabel setPosition:ccp(screenSize.width * 0.32f, screenSize.height*0.55f)];
+        [self addChild:musicLabel];
         
         [backMenu setPosition:ccp(screenSize.width * 0.9f, screenSize.height * 0.1f)];
         [self addChild:backMenu];

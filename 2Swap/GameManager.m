@@ -10,17 +10,13 @@
 #import "MainMenuScene.h"
 #import "OptionsScene.h"
 #import "CreditsScene.h"
+#import "SelectChapterScene.h"
 
 @implementation GameManager
 static GameManager* _sharedGameManager = nil;                      // 1
 @synthesize isMusicON;
 @synthesize isSoundEffectsON;
 @synthesize hasPlayerDied;
-@synthesize curLevel;
-@synthesize curScore;
-@synthesize scoreFirstStar;
-@synthesize scoreSecondStar;
-@synthesize scoreThridStar;
 
 +(GameManager*)sharedGameManager {
     @synchronized([GameManager class])                             // 2
@@ -70,6 +66,11 @@ static GameManager* _sharedGameManager = nil;                      // 1
             break;
         case kCreditsScene:
             sceneToRun = [CreditsScene node];
+            break;
+        case kSelectChapterScene:
+            sceneToRun = [SelectChapterScene node];
+            break;
+        case kSelectLevel1Scene:
             break;
         case kIntroScene:
             break;
@@ -137,7 +138,7 @@ static GameManager* _sharedGameManager = nil;                      // 1
         CCLOG(@"Opening Book Site");
         urlToOpen = 
         [NSURL URLWithString:
-         @"http://www.informit.com/title/9780321735621"];
+         @"http://www.google.com"];
     } else if (linkTypeToOpen == kLinkTypeDeveloperSiteRod) {
         CCLOG(@"Opening Developer Site for Rod");
         urlToOpen = [NSURL URLWithString:@"http://www.prop.gr"];
