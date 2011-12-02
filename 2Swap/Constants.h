@@ -39,3 +39,8 @@ typedef enum {
 // Debug Enemy States with Labels
 // 0 for OFF, 1 for ON
 #define ENEMY_STATE_DEBUG 0
+#define kFontScaleHuge 6;
+#define kFontScaleLarge 9;
+#define kFontScaleMedium 10;
+#define kFontScaleSmall 12;
+#define kFontScaleTiny 14;
