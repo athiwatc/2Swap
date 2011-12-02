@@ -282,6 +282,7 @@
 		037081B61488873400671E1F /* TemplateData.m in Sources */ = {isa = PBXBuildFile; fileRef = 037081A31488873400671E1F /* TemplateData.m */; };
 		037081B71488873400671E1F /* TemplateData.xml in Resources */ = {isa = PBXBuildFile; fileRef = 037081A41488873400671E1F /* TemplateData.xml */; };
 		037081B81488873400671E1F /* TemplateDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 037081A61488873400671E1F /* TemplateDataParser.m */; };
+		037081BD14888B0F00671E1F /* CCScrollLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 037081BC14888B0F00671E1F /* CCScrollLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -747,6 +748,8 @@
 		037081A41488873400671E1F /* TemplateData.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TemplateData.xml; sourceTree = "<group>"; };
 		037081A51488873400671E1F /* TemplateDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplateDataParser.h; sourceTree = "<group>"; };
 		037081A61488873400671E1F /* TemplateDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplateDataParser.m; sourceTree = "<group>"; };
+		037081BB14888B0F00671E1F /* CCScrollLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScrollLayer.h; sourceTree = "<group>"; };
+		037081BC14888B0F00671E1F /* CCScrollLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScrollLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -839,6 +842,7 @@
 				0312063D1463E0990009FD90 /* LICENSE_TouchJSON.txt */,
 				031206651463E0990009FD90 /* LICENSE_FontLabel.txt */,
 				031206D81463E09A0009FD90 /* LICENSE_Box2D.txt */,
+				037081B914888B0F00671E1F /* Extensions */,
 				0312052E1463E0970009FD90 /* cocos2d */,
 				031206241463E0990009FD90 /* CocosDenshion */,
 				031206331463E0990009FD90 /* cocoslive */,
@@ -1600,6 +1604,24 @@
 			path = Template;
 			sourceTree = "<group>";
 		};
+		037081B914888B0F00671E1F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				037081BA14888B0F00671E1F /* CCScrollLayer */,
+			);
+			name = Extensions;
+			path = libs/Extensions;
+			sourceTree = "<group>";
+		};
+		037081BA14888B0F00671E1F /* CCScrollLayer */ = {
+			isa = PBXGroup;
+			children = (
+				037081BB14888B0F00671E1F /* CCScrollLayer.h */,
+				037081BC14888B0F00671E1F /* CCScrollLayer.m */,
+			);
+			path = CCScrollLayer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1927,6 +1949,7 @@
 				037081B51488873400671E1F /* Levels.m in Sources */,
 				037081B61488873400671E1F /* TemplateData.m in Sources */,
 				037081B81488873400671E1F /* TemplateDataParser.m in Sources */,
+				037081BD14888B0F00671E1F /* CCScrollLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
