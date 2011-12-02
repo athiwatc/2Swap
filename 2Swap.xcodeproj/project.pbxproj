@@ -283,6 +283,16 @@
 		037081B71488873400671E1F /* TemplateData.xml in Resources */ = {isa = PBXBuildFile; fileRef = 037081A41488873400671E1F /* TemplateData.xml */; };
 		037081B81488873400671E1F /* TemplateDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 037081A61488873400671E1F /* TemplateDataParser.m */; };
 		037081BD14888B0F00671E1F /* CCScrollLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 037081BC14888B0F00671E1F /* CCScrollLayer.m */; };
+		03F5D33414892F9B0082235E /* LevelSelectLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F5D33114892F9B0082235E /* LevelSelectLayer.m */; };
+		03F5D33514892F9B0082235E /* LevelSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F5D33314892F9B0082235E /* LevelSelectScene.m */; };
+		03F5D3401489315D0082235E /* Arrow-Normal-iPad-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 03F5D3381489315D0082235E /* Arrow-Normal-iPad-hd.png */; };
+		03F5D3411489315D0082235E /* Arrow-Normal-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 03F5D3391489315D0082235E /* Arrow-Normal-iPad.png */; };
+		03F5D3421489315D0082235E /* Arrow-Normal-iPhone-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 03F5D33A1489315D0082235E /* Arrow-Normal-iPhone-hd.png */; };
+		03F5D3431489315D0082235E /* Arrow-Normal-iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 03F5D33B1489315D0082235E /* Arrow-Normal-iPhone.png */; };
+		03F5D3441489315D0082235E /* Arrow-Selected-iPad-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 03F5D33C1489315D0082235E /* Arrow-Selected-iPad-hd.png */; };
+		03F5D3451489315D0082235E /* Arrow-Selected-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 03F5D33D1489315D0082235E /* Arrow-Selected-iPad.png */; };
+		03F5D3461489315D0082235E /* Arrow-Selected-iPhone-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 03F5D33E1489315D0082235E /* Arrow-Selected-iPhone-hd.png */; };
+		03F5D3471489315D0082235E /* Arrow-Selected-iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 03F5D33F1489315D0082235E /* Arrow-Selected-iPhone.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -750,6 +760,18 @@
 		037081A61488873400671E1F /* TemplateDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplateDataParser.m; sourceTree = "<group>"; };
 		037081BB14888B0F00671E1F /* CCScrollLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScrollLayer.h; sourceTree = "<group>"; };
 		037081BC14888B0F00671E1F /* CCScrollLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScrollLayer.m; sourceTree = "<group>"; };
+		03F5D33014892F9B0082235E /* LevelSelectLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSelectLayer.h; sourceTree = "<group>"; };
+		03F5D33114892F9B0082235E /* LevelSelectLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSelectLayer.m; sourceTree = "<group>"; };
+		03F5D33214892F9B0082235E /* LevelSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSelectScene.h; sourceTree = "<group>"; };
+		03F5D33314892F9B0082235E /* LevelSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSelectScene.m; sourceTree = "<group>"; };
+		03F5D3381489315D0082235E /* Arrow-Normal-iPad-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arrow-Normal-iPad-hd.png"; sourceTree = "<group>"; };
+		03F5D3391489315D0082235E /* Arrow-Normal-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arrow-Normal-iPad.png"; sourceTree = "<group>"; };
+		03F5D33A1489315D0082235E /* Arrow-Normal-iPhone-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arrow-Normal-iPhone-hd.png"; sourceTree = "<group>"; };
+		03F5D33B1489315D0082235E /* Arrow-Normal-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arrow-Normal-iPhone.png"; sourceTree = "<group>"; };
+		03F5D33C1489315D0082235E /* Arrow-Selected-iPad-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arrow-Selected-iPad-hd.png"; sourceTree = "<group>"; };
+		03F5D33D1489315D0082235E /* Arrow-Selected-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arrow-Selected-iPad.png"; sourceTree = "<group>"; };
+		03F5D33E1489315D0082235E /* Arrow-Selected-iPhone-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arrow-Selected-iPhone-hd.png"; sourceTree = "<group>"; };
+		03F5D33F1489315D0082235E /* Arrow-Selected-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arrow-Selected-iPhone.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -817,6 +839,7 @@
 		031205191463E0960009FD90 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				037081821488872A00671E1F /* XMLSupport */,
 				0370812B148883CC00671E1F /* SneakyButton */,
 				0312073414643DB80009FD90 /* Images */,
 				0312051A1463E0960009FD90 /* Default.png */,
@@ -1322,10 +1345,7 @@
 		0312073414643DB80009FD90 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				037081821488872A00671E1F /* XMLSupport */,
-				037080781488839500671E1F /* MainMenu */,
-				037080951488839500671E1F /* Levels */,
-				037080BE1488839500671E1F /* Progress */,
+				03F5D3481489319A0082235E /* MainMenuScene */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -1466,6 +1486,7 @@
 		037081611488845200671E1F /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				03F5D32F14892F9B0082235E /* LevelSelect */,
 				037081621488845200671E1F /* Credits */,
 				037081671488845200671E1F /* Gameplay */,
 				0370816A1488845200671E1F /* MainMenu */,
@@ -1620,6 +1641,44 @@
 				037081BC14888B0F00671E1F /* CCScrollLayer.m */,
 			);
 			path = CCScrollLayer;
+			sourceTree = "<group>";
+		};
+		03F5D32F14892F9B0082235E /* LevelSelect */ = {
+			isa = PBXGroup;
+			children = (
+				03F5D33014892F9B0082235E /* LevelSelectLayer.h */,
+				03F5D33114892F9B0082235E /* LevelSelectLayer.m */,
+				03F5D33214892F9B0082235E /* LevelSelectScene.h */,
+				03F5D33314892F9B0082235E /* LevelSelectScene.m */,
+			);
+			path = LevelSelect;
+			sourceTree = "<group>";
+		};
+		03F5D3371489315C0082235E /* Arrow */ = {
+			isa = PBXGroup;
+			children = (
+				03F5D3381489315D0082235E /* Arrow-Normal-iPad-hd.png */,
+				03F5D3391489315D0082235E /* Arrow-Normal-iPad.png */,
+				03F5D33A1489315D0082235E /* Arrow-Normal-iPhone-hd.png */,
+				03F5D33B1489315D0082235E /* Arrow-Normal-iPhone.png */,
+				03F5D33C1489315D0082235E /* Arrow-Selected-iPad-hd.png */,
+				03F5D33D1489315D0082235E /* Arrow-Selected-iPad.png */,
+				03F5D33E1489315D0082235E /* Arrow-Selected-iPhone-hd.png */,
+				03F5D33F1489315D0082235E /* Arrow-Selected-iPhone.png */,
+			);
+			name = Arrow;
+			path = Resources/Image/MainMenuScene/Arrow;
+			sourceTree = "<group>";
+		};
+		03F5D3481489319A0082235E /* MainMenuScene */ = {
+			isa = PBXGroup;
+			children = (
+				03F5D3371489315C0082235E /* Arrow */,
+				037080781488839500671E1F /* MainMenu */,
+				037080951488839500671E1F /* Levels */,
+				037080BE1488839500671E1F /* Progress */,
+			);
+			name = MainMenuScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1779,6 +1838,14 @@
 				037081B31488873400671E1F /* Levels-Chapter4.xml in Resources */,
 				037081B41488873400671E1F /* Levels-Chapter5.xml in Resources */,
 				037081B71488873400671E1F /* TemplateData.xml in Resources */,
+				03F5D3401489315D0082235E /* Arrow-Normal-iPad-hd.png in Resources */,
+				03F5D3411489315D0082235E /* Arrow-Normal-iPad.png in Resources */,
+				03F5D3421489315D0082235E /* Arrow-Normal-iPhone-hd.png in Resources */,
+				03F5D3431489315D0082235E /* Arrow-Normal-iPhone.png in Resources */,
+				03F5D3441489315D0082235E /* Arrow-Selected-iPad-hd.png in Resources */,
+				03F5D3451489315D0082235E /* Arrow-Selected-iPad.png in Resources */,
+				03F5D3461489315D0082235E /* Arrow-Selected-iPhone-hd.png in Resources */,
+				03F5D3471489315D0082235E /* Arrow-Selected-iPhone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1950,6 +2017,8 @@
 				037081B61488873400671E1F /* TemplateData.m in Sources */,
 				037081B81488873400671E1F /* TemplateDataParser.m in Sources */,
 				037081BD14888B0F00671E1F /* CCScrollLayer.m in Sources */,
+				03F5D33414892F9B0082235E /* LevelSelectLayer.m in Sources */,
+				03F5D33514892F9B0082235E /* LevelSelectScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

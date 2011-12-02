@@ -11,6 +11,7 @@
 #import "OptionsScene.h"
 #import "CreditsScene.h"
 #import "SelectChapterScene.h"
+#import "LevelSelectScene.h"
 
 @implementation GameManager
 static GameManager* _sharedGameManager = nil;                      // 1
@@ -67,10 +68,11 @@ static GameManager* _sharedGameManager = nil;                      // 1
         case kCreditsScene:
             sceneToRun = [CreditsScene node];
             break;
-        case kSelectChapterScene:
+        case kChapterSelectionScene:
             sceneToRun = [SelectChapterScene node];
             break;
-        case kSelectLevel1Scene:
+        case kLevelSelectionScene:
+            sceneToRun = [LevelSelectScene node];
             break;
         case kIntroScene:
             break;

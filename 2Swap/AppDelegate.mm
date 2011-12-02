@@ -110,7 +110,7 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-    [[GameManager sharedGameManager] runSceneWithID:kSelectChapterScene];
+    [[GameManager sharedGameManager] runSceneWithID:kMainMenuScene];
 }
 
 

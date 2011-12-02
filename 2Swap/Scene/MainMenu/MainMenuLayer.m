@@ -20,7 +20,7 @@
 
 -(void)playGame {
     CCLOG(@"Show the Select Chapter screen");
-    [[GameManager sharedGameManager] runSceneWithID:kSelectChapterScene];
+    [[GameManager sharedGameManager] runSceneWithID:kChapterSelectionScene];
 }
 
 -(void)playScene:(CCMenuItemFont*)itemPassedIn {

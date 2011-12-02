@@ -26,8 +26,8 @@
     //CCLOG(@"writing the selected stage to GameData.xml as %i", sender.tag);
     GameData *gameData = [GameDataParser loadData];
     [gameData setSelectedChapter:sender.tag];
-    [GameDataParser saveData:gameData];    
-    //[SceneManager goLevelSelect];
+    [GameDataParser saveData:gameData];
+    [[GameManager sharedGameManager] runSceneWithID:kLevelSelectionScene];
 }
 
 - (CCLayer*)layerWithChapterName:(NSString*)chapterName 
