@@ -1,5 +1,6 @@
 //  CommonProtocols.h
 //  SpaceViking
+#define PTM_RATIO 32
 
 typedef enum {
     kDirectionLeft,
@@ -41,7 +42,10 @@ typedef enum {
     kCartType,
     kSpikesType,
     kDiggerType,
-    kGroundType    
+    kGroundType,
+    kGameObjectNone,
+    kGameObjectPlayer,
+    kGameObjectPlatform
 } GameObjectType;
 
 @protocol GameplayLayerDelegate

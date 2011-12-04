@@ -92,7 +92,7 @@
 	[director setDisplayFPS:YES];
 	
 	
-	// make the OpenGLView a child of the view controller
+	// make the OpenGLView a child of the view controllexr
 	[viewController setView:glView];
 	
 	// make the View Controller a child of the main window
@@ -110,7 +110,7 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-    [[GameManager sharedGameManager] runSceneWithID:kMainMenuScene];
+    [[GameManager sharedGameManager] runSceneWithID:kGameLevel1];
 }
 
 

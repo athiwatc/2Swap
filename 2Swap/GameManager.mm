@@ -12,6 +12,7 @@
 #import "CreditsScene.h"
 #import "SelectChapterScene.h"
 #import "LevelSelectScene.h"
+#import "GameScene.h"
 
 @implementation GameManager
 static GameManager* _sharedGameManager = nil;                      // 1
@@ -79,6 +80,7 @@ static GameManager* _sharedGameManager = nil;                      // 1
         case kLevelCompleteScene:
             break;
         case kGameLevel1: 
+            sceneToRun = [GameScene node];
             break;
         case kGameLevel2:
             // Placeholder for Level 2
