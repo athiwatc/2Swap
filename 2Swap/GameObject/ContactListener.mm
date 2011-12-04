@@ -10,8 +10,8 @@
 #import "CommonProtocols.h"
 #import "GameObject.h"
 
-#define IS_PLAYER(x, y)         (x.type == kGameObjectPlayer || y.type == kGameObjectPlayer)
-#define IS_PLATFORM(x, y)       (x.type == kGameObjectPlatform || y.type == kGameObjectPlatform)
+#define IS_PLAYER(x, y)         (x.gameObjectType == kGameObjectPlayer || y.gameObjectType == kGameObjectPlayer)
+#define IS_PLATFORM(x, y)       (x.gameObjectType == kGameObjectPlatform || y.gameObjectType == kGameObjectPlatform)
 
 
 ContactListener::ContactListener() {

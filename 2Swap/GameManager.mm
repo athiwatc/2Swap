@@ -136,6 +136,31 @@ static GameManager* _sharedGameManager = nil;                      // 1
         [[CCDirector sharedDirector] replaceScene:sceneToRun];
     }    
 }
+
+-(CGSize)getDimensionsOfCurrentScene {
+    CGSize screenSize = [[CCDirector sharedDirector] winSize];
+    CGSize levelSize;
+    switch (currentScene) {
+        case kMainMenuScene: 
+        case kOptionsScene:
+        case kCreditsScene:
+        case kIntroScene:
+        case kLevelCompleteScene:
+        case kGameLevel1: 
+            levelSize = screenSize;
+            break;
+        case kGameLevel2:
+            levelSize = CGSizeMake(screenSize.width * 4.0f, screenSize.height);
+            break;
+            
+        default:
+            CCLOG(@"Unknown Scene ID, returning default size");
+            levelSize = screenSize;
+            break;
+    }
+    return levelSize;
+}
+
 -(void)openSiteWithLinkType:(LinkTypes)linkTypeToOpen {
     NSURL *urlToOpen = nil;
     if (linkTypeToOpen == kLinkTypeBookSite) {

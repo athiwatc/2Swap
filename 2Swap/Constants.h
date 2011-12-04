@@ -1,11 +1,11 @@
 //  Constants.h
 // Constants used in 2Swap
 
-#define kSwaperSpriteZValue 100
-#define kSwaperSpriteTagValue 0
-#define kSwaperIdleTimer 3.0f
-#define kSwaperFistDamage 10
-#define kSwaperMalletDamage 40
+#define kPlayerSpriteZValue 100
+#define kPlayerSpriteTagValue 0
+#define kPlayerIdleTimer 3.0f
+#define kPlayerFistDamage 10
+#define kPlayerMalletDamage 40
 //#define kRadarDishTagValue 10
 
 #define kMainMenuTagValue 10
