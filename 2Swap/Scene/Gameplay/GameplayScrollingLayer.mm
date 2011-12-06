@@ -111,18 +111,24 @@
 		self.isTouchEnabled = YES;
 				
 		screenSize = [CCDirector sharedDirector].winSize;
-		
-        [self setupPhysicsWorld];
-		
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Player_iPhone.plist"];          // 1
+        sceneSpriteBatchNode = [CCSpriteBatchNode batchNodeWithFile:@"Player_iPhone.png"];// 2
+        
+        [self addChild:sceneSpriteBatchNode z:20]; // 3
+        
+        		
+        [self setupPhysicsWorld];		
 		[self addScrollingBackgroundWithTileMap];
 		[self drawCollisionTiles];
-		
-        player = [Player spriteWithFile:@"Icon-Small.png"];  
+        
+		player = [[Player alloc] initWithSpriteFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"Idle_black.png"]]; // 5
         [player setJoystick:nil];
         [player setJumpButton:nil];
         [player setAttackButton:nil];
         player.position = ccp(100.0f, 180.0f);
         [player createBox2dObject:world];
+        [player setContactListener:contactListener];
+
 		
 		[self addChild:player];
 		

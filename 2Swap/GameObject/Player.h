@@ -11,23 +11,80 @@
 #import "GameCharacter.h"
 #import "SneakyButton.h"
 #import "SneakyJoystick.h"
+#import "ContactListener.h"
 
 @interface Player : GameCharacter {
-    b2Body          *body;
+    b2Body *body;
+    BOOL isSwapRed;
+    CCSpriteFrame *standingFrame;
+    
+    // Standing, breathing, and walking
+    CCAnimation *breathingAnim;
+    CCAnimation *breathingRedAnim;
+    CCAnimation *walkingAnim;
+    CCAnimation *walkingRedAnim;
+    
+    // Crouching, standing up, and Jumping
+    CCAnimation *crouchingAnim;
+    CCAnimation *crouchingRedAnim;
+    CCAnimation *standingUpAnim;
+    CCAnimation *standingUpRedAnim;
+    CCAnimation *jumpingAnim;
+    CCAnimation *jumpingRedAnim;
+    CCAnimation *afterJumpingAnim;
+    CCAnimation *afterJumpingRedAnim;
+        
+    // Taking Damage, win, and Death
+    CCAnimation *deathAnim;
+    CCAnimation *deathRedAnim;
+    CCAnimation *winAnim;    
+    CCAnimation *winRedAnim;
+
+
+    // JoyStick
     SneakyJoystick *joystick;
     SneakyButton *jumpButton ;
     SneakyButton *attackButton;
+    
+    float millisecondsStayingIdle;
+    
+    ContactListener *contactListener;
+    BOOL jumpButtonActived;
+
 }
 
 -(void) createBox2dObject:(b2World*)world;
--(void) jump;
--(void) moveRight;
--(void) moveLeft;
+-(void) move : (float) x;
+-(void) jump : (float) x andHeight : (float) y;
 -(void) updateStateWithDeltaTime:(ccTime)deltaTime;
 
 @property (nonatomic, readwrite) b2Body *body;
+// Standing, breathing, and walking
+@property (nonatomic, retain) CCAnimation *breathingAnim;
+@property (nonatomic, retain) CCAnimation *breathingRedAnim;
+@property (nonatomic, retain) CCAnimation *walkingAnim;
+@property (nonatomic, retain) CCAnimation *walkingRedAnim;
+
+// Crouching, standing up, and Jumping
+@property (nonatomic, retain) CCAnimation *crouchingAnim;
+@property (nonatomic, retain) CCAnimation *crouchingRedAnim;
+@property (nonatomic, retain) CCAnimation *standingUpAnim;
+@property (nonatomic, retain) CCAnimation *standingUpRedAnim;
+@property (nonatomic, retain) CCAnimation *jumpingAnim;
+@property (nonatomic, retain) CCAnimation *jumpingRedAnim;
+@property (nonatomic, retain) CCAnimation *afterJumpingAnim;
+@property (nonatomic, retain) CCAnimation *afterJumpingRedAnim;
+
+// Taking Damage and Death
+@property (nonatomic, retain) CCAnimation *deathAnim;
+@property (nonatomic, retain) CCAnimation *deathRedAnim;
+@property (nonatomic, retain) CCAnimation *winAnim;
+@property (nonatomic, retain) CCAnimation *winRedAnim;
+
 @property (nonatomic,assign) SneakyJoystick *joystick;
 @property (nonatomic,assign) SneakyButton *jumpButton;
 @property (nonatomic,assign) SneakyButton *attackButton;
+
+@property (nonatomic,assign) ContactListener *contactListener;
 
 @end

@@ -319,6 +319,9 @@
 		037081B71488873400671E1F /* TemplateData.xml in Resources */ = {isa = PBXBuildFile; fileRef = 037081A41488873400671E1F /* TemplateData.xml */; };
 		037081B81488873400671E1F /* TemplateDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 037081A61488873400671E1F /* TemplateDataParser.m */; };
 		037081BD14888B0F00671E1F /* CCScrollLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 037081BC14888B0F00671E1F /* CCScrollLayer.m */; };
+		03B09F61148DC47E00E9B977 /* Player_iPhone.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03B09F5F148DC47E00E9B977 /* Player_iPhone.plist */; };
+		03B09F62148DC47E00E9B977 /* Player_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B09F60148DC47E00E9B977 /* Player_iPhone.png */; };
+		03B09F67148DF49F00E9B977 /* Player.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03B09F66148DF49F00E9B977 /* Player.plist */; };
 		03BC7538148B5A3D00BEF0C6 /* ContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03BC7533148B5A3D00BEF0C6 /* ContactListener.mm */; };
 		03BC7539148B5A3D00BEF0C6 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BC7535148B5A3D00BEF0C6 /* GameObject.m */; };
 		03BC753A148B5A3D00BEF0C6 /* Player.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03BC7537148B5A3D00BEF0C6 /* Player.mm */; };
@@ -840,6 +843,9 @@
 		037081A61488873400671E1F /* TemplateDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplateDataParser.m; sourceTree = "<group>"; };
 		037081BB14888B0F00671E1F /* CCScrollLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScrollLayer.h; sourceTree = "<group>"; };
 		037081BC14888B0F00671E1F /* CCScrollLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScrollLayer.m; sourceTree = "<group>"; };
+		03B09F5F148DC47E00E9B977 /* Player_iPhone.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Player_iPhone.plist; sourceTree = "<group>"; };
+		03B09F60148DC47E00E9B977 /* Player_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player_iPhone.png; sourceTree = "<group>"; };
+		03B09F66148DF49F00E9B977 /* Player.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Player.plist; sourceTree = "<group>"; };
 		03BC7532148B5A3D00BEF0C6 /* ContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListener.h; sourceTree = "<group>"; };
 		03BC7533148B5A3D00BEF0C6 /* ContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ContactListener.mm; sourceTree = "<group>"; };
 		03BC7534148B5A3D00BEF0C6 /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
@@ -927,6 +933,7 @@
 		031205181463E0960009FD90 /* 2Swap */ = {
 			isa = PBXGroup;
 			children = (
+				03B09F63148DF2C800E9B977 /* Plists */,
 				031206F11463E4900009FD90 /* Classes */,
 				031205191463E0960009FD90 /* Resources */,
 				0312052D1463E0970009FD90 /* libs */,
@@ -1447,6 +1454,7 @@
 		0312073414643DB80009FD90 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				03B09F5A148DC3EF00E9B977 /* GameObject */,
 				032C5467148BC716004C61D9 /* ParallaxBackgrounds */,
 				032C5423148B703A004C61D9 /* Joystick */,
 				03F5D3481489319A0082235E /* MainMenuScene */,
@@ -1818,6 +1826,24 @@
 			path = CCScrollLayer;
 			sourceTree = "<group>";
 		};
+		03B09F5A148DC3EF00E9B977 /* GameObject */ = {
+			isa = PBXGroup;
+			children = (
+				03B09F5F148DC47E00E9B977 /* Player_iPhone.plist */,
+				03B09F60148DC47E00E9B977 /* Player_iPhone.png */,
+			);
+			name = GameObject;
+			path = Resources/Image/GameObject;
+			sourceTree = "<group>";
+		};
+		03B09F63148DF2C800E9B977 /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				03B09F66148DF49F00E9B977 /* Player.plist */,
+			);
+			path = Plists;
+			sourceTree = "<group>";
+		};
 		03BC7531148B5A3D00BEF0C6 /* GameObject */ = {
 			isa = PBXGroup;
 			children = (
@@ -2095,6 +2121,9 @@
 				032C5498148BC717004C61D9 /* ScrollingCloudsTextureAtlasiPhone.plist in Resources */,
 				032C5499148BC717004C61D9 /* ScrollingCloudsTextureAtlasiPhone.png in Resources */,
 				032C54A1148BDB10004C61D9 /* scroller.tmx in Resources */,
+				03B09F61148DC47E00E9B977 /* Player_iPhone.plist in Resources */,
+				03B09F62148DC47E00E9B977 /* Player_iPhone.png in Resources */,
+				03B09F67148DF49F00E9B977 /* Player.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

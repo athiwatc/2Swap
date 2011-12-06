@@ -23,6 +23,7 @@
                                       andJumpButton:[controlLayer jumpButton]
                                     andAttackButton:[controlLayer attackButton]];
         [self addChild:scrollingLayer z:1 tag:1];
+        
     }
     return self;
 }

@@ -11,25 +11,59 @@
 
 @implementation Player
 @synthesize body;
+@synthesize breathingAnim;
+@synthesize breathingRedAnim;
+@synthesize walkingAnim;
+@synthesize walkingRedAnim;
+@synthesize deathAnim;
+@synthesize deathRedAnim;
+@synthesize crouchingAnim;
+@synthesize crouchingRedAnim;
+@synthesize standingUpAnim;
+@synthesize standingUpRedAnim;
+@synthesize jumpingAnim;
+@synthesize jumpingRedAnim;
+@synthesize afterJumpingAnim;
+@synthesize afterJumpingRedAnim;
+@synthesize winAnim;
+@synthesize winRedAnim;
 @synthesize joystick;
 @synthesize jumpButton;
 @synthesize attackButton;
+@synthesize contactListener;
 
-- (id) init {
-	if ((self = [super init])) {
-        joystick = nil;
-        jumpButton = nil;
-        attackButton = nil;
-		gameObjectType = kGameObjectPlayer;
-	}
-	return self;
+- (void) dealloc {
+    joystick = nil;
+    jumpButton = nil;
+    attackButton = nil;
+    [breathingAnim release];
+    [breathingRedAnim release];
+    [walkingAnim release];
+    [walkingRedAnim release];
+    [crouchingAnim release];
+    [crouchingRedAnim release];
+    [standingUpAnim release];
+    [standingUpRedAnim release];
+    [jumpingAnim release];
+    [jumpingRedAnim release];
+    [afterJumpingAnim release];
+    [afterJumpingRedAnim release];
+    [deathAnim release];
+    [deathRedAnim release];
+    [winAnim release];
+    [winRedAnim release];
 }
+
 
 -(void)applyJoystick:(SneakyJoystick *)aJoystick forTimeDelta:(float)deltaTime
 {
-    CGPoint scaledVelocity = ccpMult(aJoystick.velocity, 0.4f);
-    b2Vec2 impulse = b2Vec2(scaledVelocity.x, 0.0f);
-    body->ApplyLinearImpulse(impulse, body->GetWorldCenter());
+    CGPoint scaledVelocity = ccpMult(aJoystick.velocity, 1.0f);
+    [self move:scaledVelocity.x];
+    if (scaledVelocity.x < 0.0f) {
+        self.flipX = NO;                                        // 3
+    } else {
+        self.flipX = YES;
+    }
 }
 
 #pragma mark -
@@ -42,122 +76,109 @@
     
     switch (newState) {
         case kStateIdle:
-            /*
-            if (isCarryingMallet) {
+            
+            if (isSwapRed) {
                 [self setDisplayFrame:[[CCSpriteFrameCache 
                                         sharedSpriteFrameCache] 
-                                       spriteFrameByName:@"sv_mallet_1.png"]];
+                                       spriteFrameByName:@"Idle_red.png"]];
             } else {
                 [self setDisplayFrame:[[CCSpriteFrameCache 
                                         sharedSpriteFrameCache] 
-                                       spriteFrameByName:@"sv_anim_1.png"]];
-            }*/
+                                       spriteFrameByName:@"Idle_black.png"]];
+            }
             break;
             
         case kStateWalking:
             //PLAYSOUNDEFFECT(VIKING_WALKING_1);
-            /*
-            if (isCarryingMallet) {
+            
+            if (isSwapRed) {
                 action = 
-                [CCAnimate actionWithAnimation:walkingMalletAnim 
+                [CCAnimate actionWithAnimation:walkingRedAnim 
                           restoreOriginalFrame:NO];
             } else {
                 action = 
                 [CCAnimate actionWithAnimation:walkingAnim 
                           restoreOriginalFrame:NO];
             }            
-            */
+            
             break;
             
             
         case kStateCrouching:
-            /*
-            [self playCrouchingSound];
-            if (isCarryingMallet) {
+            
+            //[self playCrouchingSound];
+            if (isSwapRed) {
                 action = 
-                [CCAnimate actionWithAnimation:crouchingMalletAnim 
+                [CCAnimate actionWithAnimation:crouchingRedAnim 
                           restoreOriginalFrame:NO];
             } else {
                 action = 
                 [CCAnimate actionWithAnimation:crouchingAnim 
                           restoreOriginalFrame:NO];
-            }*/
+            }
             break;
             
         case kStateStandingUp:
-            /*
-            if (isCarryingMallet) {
+            
+            if (isSwapRed) {
                 action = 
-                [CCAnimate actionWithAnimation:standingUpMalletAnim 
+                [CCAnimate actionWithAnimation:standingUpRedAnim 
                           restoreOriginalFrame:NO];
                 
             } else {
                 action = 
                 [CCAnimate actionWithAnimation:standingUpAnim 
                           restoreOriginalFrame:NO];
-            }*/
+            }
             break;
             
         case kStateBreathing:
-            /*
-            [self playBreathingSound];
-            if (isCarryingMallet) {
+            
+            //[self playBreathingSound];
+            if (isSwapRed) {
                 action = 
-                [CCAnimate actionWithAnimation:breathingMalletAnim 
+                [CCAnimate actionWithAnimation:breathingRedAnim 
                           restoreOriginalFrame:YES];
             } else {
                 action = 
                 [CCAnimate actionWithAnimation:breathingAnim 
                           restoreOriginalFrame:YES];
-            }*/
+            }
             break;
             
         case kStateJumping:
-            /*
-            newPosition = ccp(screenSize.width * 0.2f, 0.0f);
-            if ([self flipX] == YES) {
-                newPosition = ccp(newPosition.x * -1.0f, 0.0f);
-            } 
-            movementAction = [CCJumpBy actionWithDuration:0.5f 
-                                                 position:newPosition 
-                                                   height:160.0f 
-                                                    jumps:1];
             
-            if (isCarryingMallet) {
+            if ([self flipX] == NO) {
+                [self jump:-5.0f andHeight:20.0f];
+            } else { 
+                [self jump:5.0f andHeight:20.0f];
+            }
+            if (isSwapRed) {
                 // Viking Jumping animation with the Mallet
                 action = [CCSequence actions:
-                          [CCAnimate 
-                           actionWithAnimation:crouchingMalletAnim 
-                           restoreOriginalFrame:NO],
                           [CCSpawn actions:
                            [CCAnimate 
-                            actionWithAnimation:jumpingMalletAnim 
+                            actionWithAnimation:jumpingRedAnim 
                             restoreOriginalFrame:YES],
-                           movementAction,
                            nil],
                           [CCAnimate 
-                           actionWithAnimation:afterJumpingMalletAnim 
+                           actionWithAnimation:afterJumpingRedAnim 
                            restoreOriginalFrame:NO],
                           nil];
             } else {
                 // Viking Jumping animation without the Mallet
                 action = [CCSequence actions:
-                          [CCAnimate 
-                           actionWithAnimation:crouchingAnim 
-                           restoreOriginalFrame:NO],
-                          [CCSpawn actions:
+                            [CCSpawn actions:
                            [CCAnimate 
                             actionWithAnimation:jumpingAnim 
                             restoreOriginalFrame:YES],
-                           movementAction,
                            nil],
                           [CCAnimate 
                            actionWithAnimation:afterJumpingAnim 
                            restoreOriginalFrame:NO],
                           nil];
-            }*/
+            }
             
-            [self jump];		    
             break;
             
         case kStateAttacking:
@@ -197,12 +218,18 @@
             break;
             
         case kStateDead:
-            /*
-            [self playDyingSound];
-            action = [CCAnimate 
-                      actionWithAnimation:deathAnim 
-                      restoreOriginalFrame:NO];
-             */
+            
+            //[self playDyingSound];
+            if (isSwapRed) {
+                action = [CCAnimate 
+                          actionWithAnimation:deathRedAnim 
+                          restoreOriginalFrame:NO];
+
+            } else {
+                action = [CCAnimate 
+                          actionWithAnimation:deathAnim 
+                          restoreOriginalFrame:NO];
+            }
             break;    
             
         default:
@@ -214,13 +241,14 @@
 }
 
 -(void)updateStateWithDeltaTime:(ccTime)deltaTime {
-    /*if (self.characterState == kStateDead) 
+    if (self.characterState == kStateDead) 
         return; // Nothing to do if the Viking is dead
     
     if ((self.characterState == kStateTakingDamage) && 
         ([self numberOfRunningActions] > 0))
         return; // Currently playing the taking damage animation
-    */
+    
+    
     // Check for collisions
     // Change this to keep the object count from querying it each time
     /*
@@ -255,17 +283,17 @@
     }    
     */
     //[self checkAndClampSpritePosition];
-    /*if ((self.characterState == kStateIdle) || 
+    if ((self.characterState == kStateIdle) || 
         (self.characterState == kStateWalking) ||
         (self.characterState == kStateCrouching) ||
         (self.characterState == kStateStandingUp) || 
         (self.characterState == kStateBreathing)) {
-        */
-        if (jumpButton.active) {
+        
+        if (jumpButton.active && !contactListener->isJumping) {
             [self changeState:kStateJumping];
         } /*else if (attackButton.active) {
             [self changeState:kStateAttacking];
-        } else if ((joystick.velocity.x == 0.0f) && 
+        }*/ else if ((joystick.velocity.x == 0.0f) && 
                    (joystick.velocity.y == 0.0f)) {
             if (self.characterState == kStateCrouching) 
                 [self changeState:kStateStandingUp];
@@ -277,9 +305,9 @@
                 [self changeState:kStateWalking];
             [self applyJoystick:joystick 
                    forTimeDelta:deltaTime];
-        } */
-    //}  
-    /*
+        }
+    }  
+    
     if ([self numberOfRunningActions] == 0) {
         // Not playing an animation
         if (self.characterHealth <= 0.0f) {
@@ -287,7 +315,7 @@
         } else if (self.characterState == kStateIdle) {
             millisecondsStayingIdle = millisecondsStayingIdle + 
             deltaTime;
-            if (millisecondsStayingIdle > kVikingIdleTimer) {
+            if (millisecondsStayingIdle > kPlayerIdleTimer) {
                 [self changeState:kStateBreathing];
             }
         } else if ((self.characterState != kStateCrouching) && 
@@ -295,10 +323,8 @@
             millisecondsStayingIdle = 0.0f;
             [self changeState:kStateIdle];
         }
-    }*/
-    [self applyJoystick:joystick 
-           forTimeDelta:deltaTime];
-
+    }
+    //CCLOG(@"now state : %i",characterState);
 }
 
 
@@ -312,28 +338,76 @@
 	body = world->CreateBody(&playerBodyDef);
 	
 	b2CircleShape circleShape;
-	circleShape.m_radius = 0.7;
+	circleShape.m_radius = 1.5;
 	b2FixtureDef fixtureDef;
 	fixtureDef.shape = &circleShape;
-	fixtureDef.density = 1.0f;
+	fixtureDef.density = 0.5f;
 	fixtureDef.friction = 1.0f;
 	fixtureDef.restitution =  0.0f;
 	body->CreateFixture(&fixtureDef);
 }
 
--(void) moveLeft {
-    b2Vec2 impulse = b2Vec2(-5.0f, 0.0f);
+-(void) move : (float) x {
+    b2Vec2 impulse = b2Vec2(x, 0.0f);
     body->ApplyLinearImpulse(impulse, body->GetWorldCenter());		
 }
 
--(void) moveRight {
-    b2Vec2 impulse = b2Vec2(5.0f, 0.0f);
-    body->ApplyLinearImpulse(impulse, body->GetWorldCenter());		
-}
-
--(void) jump {
+-(void) jump : (float) x andHeight : (float) y {
     CCLOG(@"Jump!!");
-    b2Vec2 impulse = b2Vec2(2.0f, 10.0f);
+    b2Vec2 impulse = b2Vec2(x, y);
     body->ApplyLinearImpulse(impulse, body->GetWorldCenter());		    
 }
+
+#pragma mark -
+-(void)initAnimations {
+    
+    [self setBreathingAnim:[self loadPlistForAnimationWithName:@"breathingAnim" 
+                                                  andClassName:NSStringFromClass([self class])]];
+    [self setBreathingRedAnim:[self loadPlistForAnimationWithName:@"breathingRedAnim" andClassName:NSStringFromClass([self class])]];
+    
+    [self setWalkingAnim:[self loadPlistForAnimationWithName:@"walkingAnim" andClassName:NSStringFromClass([self class])]];
+    
+    [self setWalkingRedAnim:[self loadPlistForAnimationWithName:@"walkingRedAnim" andClassName:NSStringFromClass([self class])]];
+    
+    [self setCrouchingAnim:[self loadPlistForAnimationWithName:@"crouchingAnim" andClassName:NSStringFromClass([self class])]];
+
+    [self setCrouchingRedAnim:[self loadPlistForAnimationWithName:@"crouchingRedAnim" andClassName:NSStringFromClass([self class])]];
+    
+    [self setStandingUpAnim:[self loadPlistForAnimationWithName:@"standingUpAnim" andClassName:NSStringFromClass([self class])]];
+    [self setStandingUpRedAnim:[self loadPlistForAnimationWithName:@"standingUpRedAnim" andClassName:NSStringFromClass([self class])]];
+        
+    [self setJumpingAnim:[self loadPlistForAnimationWithName:@"jumpingAnim" andClassName:NSStringFromClass([self class])]];
+    
+    [self setJumpingRedAnim:[self loadPlistForAnimationWithName:@"jumpingRedAnim" andClassName:NSStringFromClass([self class])]];
+
+    
+    [self setAfterJumpingAnim:[self loadPlistForAnimationWithName:@"afterJumpingAnim" andClassName:NSStringFromClass([self class])]];
+    
+    
+    [self setAfterJumpingRedAnim:[self loadPlistForAnimationWithName:@"afterJumpingRedAnim" andClassName:NSStringFromClass([self class])]];
+
+
+    [self setDeathAnim:[self loadPlistForAnimationWithName:@"playerDeathAnim" andClassName:NSStringFromClass([self class])]];
+    
+    [self setDeathRedAnim:[self loadPlistForAnimationWithName:@"playerDeathRedAnim" andClassName:NSStringFromClass([self class])]];
+    
+    [self setWinAnim:[self loadPlistForAnimationWithName:@"winningAnim" andClassName:NSStringFromClass([self class])]];
+    [self setWinRedAnim:[self loadPlistForAnimationWithName:@"winningRedAnim" andClassName:NSStringFromClass([self class])]];
+}
+
+- (id) init {
+	if ((self = [super init])) {
+        joystick = nil;
+        jumpButton = nil;
+        attackButton = nil;
+		gameObjectType = kGameObjectPlayer;
+        isSwapRed = NO;
+        millisecondsStayingIdle = 0.0f;
+        [self setCharacterHealth:100.0f];
+        [self initAnimations];
+	}
+	return self;
+}
+
+
 @end

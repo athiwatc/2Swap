@@ -20,6 +20,7 @@
 @interface GameplayScrollingLayer : CCLayer
 {
     CGSize screenSize;
+    CCSpriteBatchNode *sceneSpriteBatchNode;
 	b2World* world;
 	GLESDebugDraw *m_debugDraw;
 	CCTMXTiledMap *tileMapNode;	

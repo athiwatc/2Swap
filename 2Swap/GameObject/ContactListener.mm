@@ -15,6 +15,7 @@
 
 
 ContactListener::ContactListener() {
+    isJumping = NO;
 }
 
 ContactListener::~ContactListener() {
@@ -26,6 +27,7 @@ void ContactListener::BeginContact(b2Contact *contact) {
 	
 	if (IS_PLATFORM(o1, o2) && IS_PLAYER(o1, o2)) {
         CCLOG(@"-----> Player made contact with platform!");
+        isJumping = NO;
     }
 }
 
@@ -35,6 +37,7 @@ void ContactListener::EndContact(b2Contact *contact) {
     
 	if (IS_PLATFORM(o1, o2) && IS_PLAYER(o1, o2)) {
         CCLOG(@"-----> Player lost contact with platform!");
+        isJumping = YES;
     }
 }
 
