@@ -39,6 +39,8 @@
     CCAnimation *deathRedAnim;
     CCAnimation *winAnim;    
     CCAnimation *winRedAnim;
+    
+    CCAnimation *explodedAnim;
 
 
     // JoyStick
@@ -80,6 +82,8 @@
 @property (nonatomic, retain) CCAnimation *deathRedAnim;
 @property (nonatomic, retain) CCAnimation *winAnim;
 @property (nonatomic, retain) CCAnimation *winRedAnim;
+
+@property (nonatomic, retain) CCAnimation *explodedAnim;
 
 @property (nonatomic,assign) SneakyJoystick *joystick;
 @property (nonatomic,assign) SneakyButton *jumpButton;

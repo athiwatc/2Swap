@@ -27,6 +27,7 @@
 @synthesize afterJumpingRedAnim;
 @synthesize winAnim;
 @synthesize winRedAnim;
+@synthesize explodedAnim;
 @synthesize joystick;
 @synthesize jumpButton;
 @synthesize attackButton;
@@ -52,6 +53,7 @@
     [deathRedAnim release];
     [winAnim release];
     [winRedAnim release];
+    [explodedAnim release];
 }
 
 
@@ -149,9 +151,9 @@
         case kStateJumping:
             
             if ([self flipX] == NO) {
-                [self jump:-5.0f andHeight:20.0f];
+                [self jump:-10.0f andHeight:30.0f];
             } else { 
-                [self jump:5.0f andHeight:20.0f];
+                [self jump:10.0f andHeight:30.0f];
             }
             if (isSwapRed) {
                 // Viking Jumping animation with the Mallet
@@ -232,6 +234,20 @@
             }
             break;    
             
+        case kStateExploded:
+            
+            if (isSwapRed) {
+                action = [CCAnimate actionWithAnimation:explodedAnim
+                                   restoreOriginalFrame:YES];
+                isSwapRed = NO;
+                gameObjectType = kGameObjectPlayer;
+            } else {
+                action = [CCAnimate actionWithAnimation:explodedAnim
+                                   restoreOriginalFrame:YES];
+                isSwapRed = YES;
+                gameObjectType = kGameObjectPlayerRed;
+            }
+            
         default:
             break;
     }
@@ -291,16 +307,16 @@
         
         if (jumpButton.active && !contactListener->isJumping) {
             [self changeState:kStateJumping];
-        } /*else if (attackButton.active) {
-            [self changeState:kStateAttacking];
-        }*/ else if ((joystick.velocity.x == 0.0f) && 
+        } else if (attackButton.active) {
+            [self changeState:kStateExploded];
+        } else if ((joystick.velocity.x == 0.0f) && 
                    (joystick.velocity.y == 0.0f)) {
             if (self.characterState == kStateCrouching) 
                 [self changeState:kStateStandingUp];
         } else if (joystick.velocity.y < -0.45f) {
             if (self.characterState != kStateCrouching) 
                 [self changeState:kStateCrouching];
-        } else if (joystick.velocity.x != 0.0f) { // dpad moving
+        } else if (joystick.velocity.x != 0.0f && !contactListener->isJumping) { // dpad moving
             if (self.characterState != kStateWalking)
                 [self changeState:kStateWalking];
             [self applyJoystick:joystick 
@@ -393,6 +409,9 @@
     
     [self setWinAnim:[self loadPlistForAnimationWithName:@"winningAnim" andClassName:NSStringFromClass([self class])]];
     [self setWinRedAnim:[self loadPlistForAnimationWithName:@"winningRedAnim" andClassName:NSStringFromClass([self class])]];
+    
+    [self setExplodedAnim:[self loadPlistForAnimationWithName:@"explodedAnim" andClassName:NSStringFromClass([self class])]];
+
 }
 
 - (id) init {
@@ -404,6 +423,7 @@
         isSwapRed = NO;
         millisecondsStayingIdle = 0.0f;
         [self setCharacterHealth:100.0f];
+        [self setFlipX:YES];
         [self initAnimations];
 	}
 	return self;

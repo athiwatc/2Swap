@@ -7,7 +7,7 @@
 		<key>filenamePrefix</key>
 		<string>Jump_black_</string>
 		<key>delay</key>
-		<real>0.5</real>
+		<real>0.2</real>
 		<key>animationFrames</key>
 		<string>0,0,1,1,0,0</string>
 	</dict>
@@ -145,6 +145,15 @@
 		<real>0.2</real>
 		<key>animationFrames</key>
 		<string>0,1,2,3,4,5,6,7,8,9,10</string>
+	</dict>
+	<key>explodedAnim</key>
+	<dict>
+		<key>filenamePrefix</key>
+		<string>Explode_</string>
+		<key>delay</key>
+		<string>0.08</string>
+		<key>animationFrames</key>
+		<string>0,1,2,3</string>
 	</dict>
 </dict>
 </plist>

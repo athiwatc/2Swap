@@ -21,7 +21,8 @@ typedef enum {
     kStateTraveling,
     kStateRotating, 
     kStateDrilling,
-    kStateAfterJumping
+    kStateAfterJumping,
+    kStateExploded
 } CharacterStates; // 1
 
 typedef enum {
@@ -45,6 +46,7 @@ typedef enum {
     kGroundType,
     kGameObjectNone,
     kGameObjectPlayer,
+    kGameObjectPlayerRed,
     kGameObjectPlatform
 } GameObjectType;
 
