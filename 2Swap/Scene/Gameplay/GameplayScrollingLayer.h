@@ -13,6 +13,7 @@
 #import "GLES-Render.h"
 #import "ContactListener.h"
 #import "GameControlLayer.h"
+#import "ContactFiltering.h"
 
 
 @class Player;
@@ -26,6 +27,7 @@
 	CCTMXTiledMap *tileMapNode;	
     Player *player;
     ContactListener *contactListener;
+    ContactFiltering *contactFiltering;
 }
 
 -(void)connectControlsWithJoystick:(SneakyJoystick*)leftJoystick 

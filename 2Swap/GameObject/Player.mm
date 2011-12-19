@@ -240,12 +240,14 @@
                 action = [CCAnimate actionWithAnimation:explodedAnim
                                    restoreOriginalFrame:YES];
                 isSwapRed = NO;
-                gameObjectType = kGameObjectPlayer;
+                gameObjectType = kGameObjectPlayerBlack;
+                [self createPlayerFixtureDef:kGIndexFilterPlayerBlackTagValue];
             } else {
                 action = [CCAnimate actionWithAnimation:explodedAnim
                                    restoreOriginalFrame:YES];
                 isSwapRed = YES;
                 gameObjectType = kGameObjectPlayerRed;
+                [self createPlayerFixtureDef:kGIndexFilterPlayerRedTagValue];
             }
             
         default:
@@ -343,6 +345,27 @@
     //CCLOG(@"now state : %i",characterState);
 }
 
+-(void) createPlayerFixtureDef : (int) stateTag
+{
+    if (bodyFixture != NULL) 
+    {
+        body->DestroyFixture(bodyFixture);
+        bodyFixture = NULL;
+    }
+    b2PolygonShape boxShape;
+    boxShape.SetAsBox(1.0f, 1.5f);
+    b2Vec2 center;
+    center.Set(0.0f, -0.1f);
+    boxShape.SetAsBox(0.9f, 1.35f, center, 0.0f);
+	b2FixtureDef fixtureDef;
+    fixtureDef.shape = &boxShape;
+	fixtureDef.density = 0.5f;
+	fixtureDef.friction = 1.0f;
+	fixtureDef.restitution =  0.0f;
+    if(stateTag == kGIndexFilterPlayerBlackTagValue) fixtureDef.filter.groupIndex = kGIndexFilterPlayerBlackTagValue;
+    else if (stateTag == kGIndexFilterPlayerRedTagValue) fixtureDef.filter.groupIndex = kGIndexFilterPlayerRedTagValue;
+    bodyFixture = body->CreateFixture(&fixtureDef);
+}
 
 -(void) createBox2dObject:(b2World*)world {
     b2BodyDef playerBodyDef;
@@ -352,16 +375,9 @@
 	playerBodyDef.fixedRotation = true;
 	
 	body = world->CreateBody(&playerBodyDef);
-	
-	b2CircleShape circleShape;
-	circleShape.m_radius = 1.5;
-	b2FixtureDef fixtureDef;
-	fixtureDef.shape = &circleShape;
-	fixtureDef.density = 0.5f;
-	fixtureDef.friction = 1.0f;
-	fixtureDef.restitution =  0.0f;
-	body->CreateFixture(&fixtureDef);
+    [self createPlayerFixtureDef:kGIndexFilterPlayerBlackTagValue];
 }
+
 
 -(void) move : (float) x {
     b2Vec2 impulse = b2Vec2(x, 0.0f);
@@ -419,7 +435,7 @@
         joystick = nil;
         jumpButton = nil;
         attackButton = nil;
-		gameObjectType = kGameObjectPlayer;
+		gameObjectType = kGameObjectPlayerBlack;
         isSwapRed = NO;
         millisecondsStayingIdle = 0.0f;
         [self setCharacterHealth:100.0f];

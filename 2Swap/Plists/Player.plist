@@ -7,7 +7,7 @@
 		<key>filenamePrefix</key>
 		<string>Jump_black_</string>
 		<key>delay</key>
-		<real>0.2</real>
+		<real>0.15</real>
 		<key>animationFrames</key>
 		<string>0,0,1,1,0,0</string>
 	</dict>
@@ -16,7 +16,7 @@
 		<key>filenamePrefix</key>
 		<string>Jump_red_</string>
 		<key>delay</key>
-		<real>0.5</real>
+		<real>0.15</real>
 		<key>animationFrames</key>
 		<string>0,0,1,1,0,0</string>
 	</dict>
@@ -25,7 +25,7 @@
 		<key>filenamePrefix</key>
 		<string>Run_black_</string>
 		<key>delay</key>
-		<real>0.12</real>
+		<real>0.09</real>
 		<key>animationFrames</key>
 		<string>0,1,2,3,4,5,6,7,8,9</string>
 	</dict>
@@ -34,7 +34,7 @@
 		<key>filenamePrefix</key>
 		<string>Run_red_</string>
 		<key>delay</key>
-		<real>0.08</real>
+		<real>0.09</real>
 		<key>animationFrames</key>
 		<string>0,1,2,3,4,5,6,7,8,9</string>
 	</dict>
@@ -43,7 +43,7 @@
 		<key>filenamePrefix</key>
 		<string>Jump_black_</string>
 		<key>delay</key>
-		<real>0.03</real>
+		<real>0.01</real>
 		<key>animationFrames</key>
 		<string>0,1,2,3</string>
 	</dict>
@@ -68,7 +68,7 @@
 	<key>standingUpRedAnim</key>
 	<dict>
 		<key>filenamePrefix</key>
-		<string>Jump_black_</string>
+		<string>Jump_red_</string>
 		<key>delay</key>
 		<real>0.05</real>
 		<key>animationFrames</key>
@@ -124,7 +124,7 @@
 		<key>filenamePrefix</key>
 		<string>Celebrate_red_</string>
 		<key>delay</key>
-		<real>0.075</real>
+		<real>0.05</real>
 		<key>animationFrames</key>
 		<string>0,1,2,3,4,5,6,7,8,9,10</string>
 	</dict>
@@ -151,7 +151,7 @@
 		<key>filenamePrefix</key>
 		<string>Explode_</string>
 		<key>delay</key>
-		<string>0.08</string>
+		<string>0.075</string>
 		<key>animationFrames</key>
 		<string>0,1,2,3</string>
 	</dict>

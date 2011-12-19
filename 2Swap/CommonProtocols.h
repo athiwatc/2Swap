@@ -45,9 +45,11 @@ typedef enum {
     kDiggerType,
     kGroundType,
     kGameObjectNone,
-    kGameObjectPlayer,
+    kGameObjectPlayerBlack,
     kGameObjectPlayerRed,
-    kGameObjectPlatform
+    kGameObjectStaticPlatform,
+    kGameObjectBlackPlatform,
+    kGameObjectRedPlatform
 } GameObjectType;
 
 @protocol GameplayLayerDelegate

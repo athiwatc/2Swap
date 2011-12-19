@@ -319,6 +319,7 @@
 		037081B71488873400671E1F /* TemplateData.xml in Resources */ = {isa = PBXBuildFile; fileRef = 037081A41488873400671E1F /* TemplateData.xml */; };
 		037081B81488873400671E1F /* TemplateDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 037081A61488873400671E1F /* TemplateDataParser.m */; };
 		037081BD14888B0F00671E1F /* CCScrollLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 037081BC14888B0F00671E1F /* CCScrollLayer.m */; };
+		03AB82C0149F8521004A73D3 /* ContactFiltering.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03AB82BF149F8521004A73D3 /* ContactFiltering.mm */; };
 		03B09F61148DC47E00E9B977 /* Player_iPhone.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03B09F5F148DC47E00E9B977 /* Player_iPhone.plist */; };
 		03B09F62148DC47E00E9B977 /* Player_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B09F60148DC47E00E9B977 /* Player_iPhone.png */; };
 		03B09F67148DF49F00E9B977 /* Player.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03B09F66148DF49F00E9B977 /* Player.plist */; };
@@ -843,6 +844,8 @@
 		037081A61488873400671E1F /* TemplateDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplateDataParser.m; sourceTree = "<group>"; };
 		037081BB14888B0F00671E1F /* CCScrollLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScrollLayer.h; sourceTree = "<group>"; };
 		037081BC14888B0F00671E1F /* CCScrollLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScrollLayer.m; sourceTree = "<group>"; };
+		03AB82BE149F8521004A73D3 /* ContactFiltering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactFiltering.h; sourceTree = "<group>"; };
+		03AB82BF149F8521004A73D3 /* ContactFiltering.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ContactFiltering.mm; sourceTree = "<group>"; };
 		03B09F5F148DC47E00E9B977 /* Player_iPhone.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Player_iPhone.plist; sourceTree = "<group>"; };
 		03B09F60148DC47E00E9B977 /* Player_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player_iPhone.png; sourceTree = "<group>"; };
 		03B09F66148DF49F00E9B977 /* Player.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Player.plist; sourceTree = "<group>"; };
@@ -1855,6 +1858,8 @@
 				03BC7537148B5A3D00BEF0C6 /* Player.mm */,
 				032C545D148BBDCD004C61D9 /* GameCharacter.h */,
 				032C545E148BBDCE004C61D9 /* GameCharacter.m */,
+				03AB82BE149F8521004A73D3 /* ContactFiltering.h */,
+				03AB82BF149F8521004A73D3 /* ContactFiltering.mm */,
 			);
 			path = GameObject;
 			sourceTree = "<group>";
@@ -2304,6 +2309,7 @@
 				032C545F148BBDCE004C61D9 /* GameCharacter.m in Sources */,
 				032C549C148BCBBC004C61D9 /* GameplayScrollingLayer.mm in Sources */,
 				032C549E148BCF36004C61D9 /* GameScene.mm in Sources */,
+				03AB82C0149F8521004A73D3 /* ContactFiltering.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

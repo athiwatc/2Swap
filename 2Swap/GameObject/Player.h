@@ -15,6 +15,7 @@
 
 @interface Player : GameCharacter {
     b2Body *body;
+    b2Fixture* bodyFixture;
     BOOL isSwapRed;
     CCSpriteFrame *standingFrame;
     
@@ -56,6 +57,7 @@
 }
 
 -(void) createBox2dObject:(b2World*)world;
+-(void) createPlayerFixtureDef : (int) stateTag;
 -(void) move : (float) x;
 -(void) jump : (float) x andHeight : (float) y;
 -(void) updateStateWithDeltaTime:(ccTime)deltaTime;

@@ -10,6 +10,7 @@
 #import "GameplayScrollingLayer.h"
 #import "CommonProtocols.h"
 #import "Constants.h"
+#import "CommonProtocols.h"
 #import "Player.h"
 #import "GameObject.h"
 
@@ -37,7 +38,8 @@
 			   friction:(long)f 
 				density:(long)dens 
 			restitution:(long)rest 
-				  boxId:(int)boxId {
+				  boxId:(int)boxId
+      platformObjectTag:(GameObjectType)gameObjectType{
 	
 	// Define the dynamic body.
 	//Set up a 1m squared box in the physics world
@@ -50,28 +52,42 @@
 	bodyDef.position.Set(p.x/PTM_RATIO, p.y/PTM_RATIO);
     
     GameObject *platform = [[GameObject alloc] init];
-    [platform setGameObjectType:kGameObjectPlatform];
+    [platform setGameObjectType:gameObjectType];
 	bodyDef.userData = platform;
 	
 	b2Body *body = world->CreateBody(&bodyDef);
 	
 	// Define another box shape for our dynamic body.
-	b2PolygonShape dynamicBox;
-	dynamicBox.SetAsBox(size.x/2/PTM_RATIO, size.y/2/PTM_RATIO);
+    b2PolygonShape dynamicBox;
+    dynamicBox.SetAsBox(size.x/2/PTM_RATIO, size.y/2/PTM_RATIO);
 	
-	// Define the dynamic body fixture.
-	b2FixtureDef fixtureDef;
-	fixtureDef.shape = &dynamicBox;	
-	fixtureDef.density = dens;
-	fixtureDef.friction = f;
-	fixtureDef.restitution = rest;
-	body->CreateFixture(&fixtureDef);
+    // Define the dynamic body fixture.
+    b2FixtureDef fixtureDef;
+    fixtureDef.shape = &dynamicBox;	
+    fixtureDef.density = dens;
+    fixtureDef.friction = f;
+    fixtureDef.restitution = rest;
+    switch (gameObjectType) {
+        case kGameObjectStaticPlatform:
+            fixtureDef.filter.groupIndex = kGIndexFilterStaticPlatformerTagValue;
+            break;
+        case kGameObjectRedPlatform:
+            fixtureDef.filter.groupIndex = kGIndexFilterRedPlatformerTagValue;
+            break;
+        case kGameObjectBlackPlatform:
+            fixtureDef.filter.groupIndex = kGIndexFilterBlackPlatformerTagValue;
+            break;
+        default:
+            break;
+    }
+    body->CreateFixture(&fixtureDef);
+    
 }
 
 
 
 - (void) drawCollisionTiles {
-	CCTMXObjectGroup *objects = [tileMapNode objectGroupNamed:@"Collision"];
+	CCTMXObjectGroup *objects = [tileMapNode objectGroupNamed:@"StaticPlatform"];
 	NSMutableDictionary * objPoint;
 	
 	int x, y, w, h;	
@@ -91,8 +107,54 @@
 					friction:1.5f 
 					 density:0.0f 
 				 restitution:0 
-					   boxId:-1];
+					   boxId:-1
+           platformObjectTag:kGameObjectStaticPlatform];
 	}
+    
+    objects = [tileMapNode objectGroupNamed:@"RedPlatform"];
+    
+	for (objPoint in [objects objects]) {
+		x = [[objPoint valueForKey:@"x"] intValue];
+		y = [[objPoint valueForKey:@"y"] intValue];
+		w = [[objPoint valueForKey:@"width"] intValue];
+		h = [[objPoint valueForKey:@"height"] intValue];	
+		
+		CGPoint _point=ccp(x+w/2,y+h/2);
+		CGPoint _size=ccp(w,h);
+		
+		[self makeBox2dObjAt:_point 
+					withSize:_size 
+					 dynamic:false 
+					rotation:0 
+					friction:1.5f 
+					 density:0.0f 
+				 restitution:0 
+					   boxId:-1
+           platformObjectTag:kGameObjectRedPlatform];
+	}
+    
+    objects = [tileMapNode objectGroupNamed:@"BlackPlatform"];
+    
+	for (objPoint in [objects objects]) {
+		x = [[objPoint valueForKey:@"x"] intValue];
+		y = [[objPoint valueForKey:@"y"] intValue];
+		w = [[objPoint valueForKey:@"width"] intValue];
+		h = [[objPoint valueForKey:@"height"] intValue];	
+		
+		CGPoint _point=ccp(x+w/2,y+h/2);
+		CGPoint _size=ccp(w,h);
+		
+		[self makeBox2dObjAt:_point 
+					withSize:_size 
+					 dynamic:false 
+					rotation:0 
+					friction:1.5f 
+					 density:0.0f 
+				 restitution:0 
+					   boxId:-1
+           platformObjectTag:kGameObjectBlackPlatform];
+	}
+
 }
 
 - (void) addScrollingBackgroundWithTileMap {
@@ -151,6 +213,8 @@
 
     contactListener = new ContactListener();
     world->SetContactListener(contactListener);
+    contactFiltering = new ContactFiltering();
+    world->SetContactFilter(contactFiltering);
 }
 
 -(void) draw {

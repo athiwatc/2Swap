@@ -10,6 +10,11 @@
 
 #define kMainMenuTagValue 10
 #define kSceneMenuTagValue 20
+#define kGIndexFilterPlayerBlackTagValue 1
+#define kGIndexFilterPlayerRedTagValue 2
+#define kGIndexFilterStaticPlatformerTagValue 3
+#define kGIndexFilterBlackPlatformerTagValue 4
+#define kGIndexFilterRedPlatformerTagValue 5
 
 typedef enum {
     kNoSceneUninitialized=0,
