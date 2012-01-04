@@ -59,7 +59,11 @@
 
 -(void)applyJoystick:(SneakyJoystick *)aJoystick forTimeDelta:(float)deltaTime
 {
-    CGPoint scaledVelocity = ccpMult(aJoystick.velocity, 1.0f);
+    CGPoint scaledVelocity;
+    if (!contactListener->isJumping) {
+        scaledVelocity = ccpMult(aJoystick.velocity, 0.8f);
+    }
+    else scaledVelocity = ccpMult(aJoystick.velocity, 0.35f);
     [self move:scaledVelocity.x];
     if (scaledVelocity.x < 0.0f) {
         self.flipX = NO;                                        // 3
@@ -151,9 +155,9 @@
         case kStateJumping:
             
             if ([self flipX] == NO) {
-                [self jump:-10.0f andHeight:30.0f];
+                [self jump:0.0f andHeight:25.0f];
             } else { 
-                [self jump:10.0f andHeight:30.0f];
+                [self jump:0.0f andHeight:25.0f];
             }
             if (isSwapRed) {
                 // Viking Jumping animation with the Mallet
@@ -318,7 +322,7 @@
         } else if (joystick.velocity.y < -0.45f) {
             if (self.characterState != kStateCrouching) 
                 [self changeState:kStateCrouching];
-        } else if (joystick.velocity.x != 0.0f && !contactListener->isJumping) { // dpad moving
+        } else if (joystick.velocity.x != 0.0f) { // dpad moving
             if (self.characterState != kStateWalking)
                 [self changeState:kStateWalking];
             [self applyJoystick:joystick 

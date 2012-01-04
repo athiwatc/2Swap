@@ -18,7 +18,7 @@
 
 
 ContactListener::ContactListener() {
-    isJumping = NO;
+    isJumping = false;
 }
 
 ContactListener::~ContactListener() {
@@ -29,16 +29,17 @@ void ContactListener::BeginContact(b2Contact *contact) {
 	GameObject *o2 = (GameObject*)contact->GetFixtureB()->GetBody()->GetUserData();
 	
 	if (IS_STATIC_PLATFORM(o1, o2) && (IS_BLACK_PLAYER(o1, o2) || IS_RED_PLAYER(o1, o2)) ) {
-        CCLOG(@"-----> Player made contact with static platform!");
-        isJumping = NO;
+        CCLOG(@"-----> Player made contact with static platform!"); 
+        isJumping = false;
     } else if (IS_RED_PLATFORM(o1, o2) && (IS_BLACK_PLAYER(o1, o2) || IS_RED_PLAYER(o1, o2)) ) {
         CCLOG(@"-----> Player made contact with red platform!");
-        isJumping = NO;
+        isJumping = false;
         
     } else if (IS_BLACK_PLATFORM(o1, o2) && (IS_BLACK_PLAYER(o1, o2) || IS_RED_PLAYER(o1, o2)) ) {
         CCLOG(@"-----> Player made contact with black platform!");
-        isJumping = NO;
+        isJumping = false;
     }
+    isJumping ? CCLOG(@"isJumping = true") : CCLOG(@"isJumping = false");
 }
 
 void ContactListener::EndContact(b2Contact *contact) {
@@ -47,15 +48,16 @@ void ContactListener::EndContact(b2Contact *contact) {
     
     if (IS_STATIC_PLATFORM(o1, o2) && (IS_BLACK_PLAYER(o1, o2) || IS_RED_PLAYER(o1, o2)) ) {
         CCLOG(@"-----> Player made contact with static platform!");
-        isJumping = NO;
+        isJumping = true;
     } else if (IS_RED_PLATFORM(o1, o2) && (IS_BLACK_PLAYER(o1, o2) || IS_RED_PLAYER(o1, o2)) ) {
         CCLOG(@"-----> Player made contact with red platform!");
-        isJumping = NO;
+        isJumping = true;
         
     } else if (IS_BLACK_PLATFORM(o1, o2) && (IS_BLACK_PLAYER(o1, o2) || IS_RED_PLAYER(o1, o2)) ) {
         CCLOG(@"-----> Player made contact with black platform!");
-        isJumping = NO;
+        isJumping = true;
     }
+    isJumping ? CCLOG(@"isJumping = true") : CCLOG(@"isJumping = false");
 }
 
 void ContactListener::PreSolve(b2Contact *contact, const b2Manifold *oldManifold) {

@@ -12,7 +12,7 @@ class ContactListener : public b2ContactListener {
 public:
 	ContactListener();
 	~ContactListener();
-    BOOL isJumping;
+    bool isJumping;
 
 	virtual void BeginContact(b2Contact *contact);
 	virtual void EndContact(b2Contact *contact);

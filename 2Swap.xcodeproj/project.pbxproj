@@ -323,6 +323,7 @@
 		03B09F61148DC47E00E9B977 /* Player_iPhone.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03B09F5F148DC47E00E9B977 /* Player_iPhone.plist */; };
 		03B09F62148DC47E00E9B977 /* Player_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B09F60148DC47E00E9B977 /* Player_iPhone.png */; };
 		03B09F67148DF49F00E9B977 /* Player.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03B09F66148DF49F00E9B977 /* Player.plist */; };
+		03B7F7EA14B472F600023DE9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B7F7E914B472F600023DE9 /* Default@2x.png */; };
 		03BC7538148B5A3D00BEF0C6 /* ContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03BC7533148B5A3D00BEF0C6 /* ContactListener.mm */; };
 		03BC7539148B5A3D00BEF0C6 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BC7535148B5A3D00BEF0C6 /* GameObject.m */; };
 		03BC753A148B5A3D00BEF0C6 /* Player.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03BC7537148B5A3D00BEF0C6 /* Player.mm */; };
@@ -849,6 +850,7 @@
 		03B09F5F148DC47E00E9B977 /* Player_iPhone.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Player_iPhone.plist; sourceTree = "<group>"; };
 		03B09F60148DC47E00E9B977 /* Player_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player_iPhone.png; sourceTree = "<group>"; };
 		03B09F66148DF49F00E9B977 /* Player.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Player.plist; sourceTree = "<group>"; };
+		03B7F7E914B472F600023DE9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
 		03BC7532148B5A3D00BEF0C6 /* ContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListener.h; sourceTree = "<group>"; };
 		03BC7533148B5A3D00BEF0C6 /* ContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ContactListener.mm; sourceTree = "<group>"; };
 		03BC7534148B5A3D00BEF0C6 /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
@@ -956,6 +958,7 @@
 				031205201463E0960009FD90 /* Icon-Small-50.png */,
 				031205221463E0960009FD90 /* Icon-Small.png */,
 				031205241463E0960009FD90 /* Icon-Small@2x.png */,
+				03B7F7E914B472F600023DE9 /* Default@2x.png */,
 				031205261463E0960009FD90 /* Icon.png */,
 				031205281463E0960009FD90 /* Icon@2x.png */,
 				0312052A1463E0960009FD90 /* Info.plist */,
@@ -2129,6 +2132,7 @@
 				03B09F61148DC47E00E9B977 /* Player_iPhone.plist in Resources */,
 				03B09F62148DC47E00E9B977 /* Player_iPhone.png in Resources */,
 				03B09F67148DF49F00E9B977 /* Player.plist in Resources */,
+				03B7F7EA14B472F600023DE9 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
