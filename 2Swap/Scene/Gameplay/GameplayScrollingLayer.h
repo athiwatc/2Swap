@@ -14,9 +14,10 @@
 #import "ContactListener.h"
 #import "GameControlLayer.h"
 #import "ContactFiltering.h"
-
+#import "GameScene.h"
 
 @class Player;
+@class GameScene;
 
 @interface GameplayScrollingLayer : CCLayer
 {
@@ -28,11 +29,24 @@
     Player *player;
     ContactListener *contactListener;
     ContactFiltering *contactFiltering;
+    CCMenu *sceneSelectMenu;
+    CCMenu *mainMenu;
+    GameScene *currentScene;
+    
+    SneakyJoystick *leftJoy;
+    SneakyButton *jumpButt;
+    SneakyButton *attackButt;
+
 }
 
 -(void)connectControlsWithJoystick:(SneakyJoystick*)leftJoystick 
                      andJumpButton:(SneakyButton*)jumpButton 
                    andAttackButton:(SneakyButton*)attackButton;    
-
+-(void)createNewWorld;
+-(void)deleteWorld;
+-(void)restartGame;
+-(void)playNextGame;
+-(void)goHome;
+-(void)setCurrentScene : (GameScene*) gameScene;
 
 @end

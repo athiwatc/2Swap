@@ -13,6 +13,7 @@
 #import "CommonProtocols.h"
 #import "Player.h"
 #import "GameObject.h"
+#import "DeathPopUpLayer.h"
 
 @interface GameplayScrollingLayer(Private) 
 -(void) setupPhysicsWorld;
@@ -23,13 +24,36 @@
 -(void)connectControlsWithJoystick:(SneakyJoystick*)leftJoystick 
                      andJumpButton:(SneakyButton*)jumpButton 
                    andAttackButton:(SneakyButton*)attackButton {
-    
-    [player setJoystick:leftJoystick];
-    [player setJumpButton:jumpButton];
-    [player setAttackButton:attackButton];
+    leftJoy = leftJoystick;
+    jumpButt = jumpButton;
+    attackButt = attackButton;
+    [player setJoystick:leftJoy];
+    [player setJumpButton:jumpButt];
+    [player setAttackButton:attackButt];
     
 }
 
+-(void)setCurrentScene:(GameScene *)gameScene
+{
+    currentScene = gameScene;
+}
+
+-(void)restartGame
+{
+    [self deleteWorld];
+    [currentScene removeDeathPopUp];
+    [self createNewWorld];
+}
+
+-(void)playNextGame
+{
+    
+}
+
+-(void)goHome
+{
+    
+}
 
 - (void) makeBox2dObjAt:(CGPoint)p 
 			   withSize:(CGPoint)size 
@@ -163,6 +187,49 @@
 	[self addChild:tileMapNode];
 }
 
+- (void) createNewWorld
+{
+    screenSize = [CCDirector sharedDirector].winSize;
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Player_iPhone.plist"];          // 1
+    sceneSpriteBatchNode = [CCSpriteBatchNode batchNodeWithFile:@"Player_iPhone.png"];// 2
+    
+    [self addChild:sceneSpriteBatchNode z:20]; // 3
+    
+    
+    [self setupPhysicsWorld];		
+    [self addScrollingBackgroundWithTileMap];
+    [self drawCollisionTiles];
+    
+    player = [[Player alloc] initWithSpriteFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"Idle_black.png"]]; // 5
+    //[player setJoystick:nil];
+    //[player setJumpButton:nil];
+    //[player setAttackButton:nil];
+    player.position = ccp(100.0f, 180.0f);
+    [player createBox2dObject:world];
+    [player setContactListener:contactListener];
+    
+    
+    [self addChild:player];
+    [player setJoystick:leftJoy];
+    [player setJumpButton:jumpButt];
+    [player setAttackButton:attackButt];
+
+    
+    // Start main game loop
+    [self unscheduleUpdate];
+    [self scheduleUpdate];
+
+}
+
+- (void) deleteWorld
+{
+    delete world;
+	world = NULL;
+	
+	delete m_debugDraw;
+    [self removeChild:player cleanup:YES];
+    [self removeChild:sceneSpriteBatchNode cleanup:YES];
+}
 
 // initialize your instance here
 -(id) init
@@ -172,31 +239,8 @@
 		// enable touches
 		self.isTouchEnabled = YES;
 				
-		screenSize = [CCDirector sharedDirector].winSize;
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Player_iPhone.plist"];          // 1
-        sceneSpriteBatchNode = [CCSpriteBatchNode batchNodeWithFile:@"Player_iPhone.png"];// 2
-        
-        [self addChild:sceneSpriteBatchNode z:20]; // 3
-        
-        		
-        [self setupPhysicsWorld];		
-		[self addScrollingBackgroundWithTileMap];
-		[self drawCollisionTiles];
-        
-		player = [[Player alloc] initWithSpriteFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"Idle_black.png"]]; // 5
-        [player setJoystick:nil];
-        [player setJumpButton:nil];
-        [player setAttackButton:nil];
-        player.position = ccp(100.0f, 180.0f);
-        [player createBox2dObject:world];
-        [player setContactListener:contactListener];
-
-		
-		[self addChild:player];
-		
-        // Start main game loop
-		[self scheduleUpdate];
-	}
+        [self createNewWorld];
+    }
 	return self;
 }
 
@@ -256,7 +300,13 @@
 	}	
 	
 	b2Vec2 pos = [player body]->GetPosition();
+    
 	CGPoint newPos = ccp(-1 * pos.x * PTM_RATIO + 100, self.position.y * PTM_RATIO);	
+    CCLOG(@"y = %f",pos.y);
+    if (pos.y < -3.0f) {
+        [currentScene applyDeathPopUp];
+        [self unscheduleUpdate];
+    }
 	[self setPosition:newPos];
     
     [player updateStateWithDeltaTime:dt];
