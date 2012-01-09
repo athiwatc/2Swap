@@ -1,9 +1,9 @@
 //  GameControlLayer.m
 //  SpaceViking
 //
-#import "DeathPopUpLayer.h"
+#import "WinPopUpLayer.h"
 
-@implementation DeathPopUpLayer
+@implementation WinPopUpLayer
 
 - (void) setGame:(GameplayScrollingLayer *)gamei
 {
@@ -25,7 +25,7 @@
     [game goHome];
 }
 
--(void)deathPopup
+-(void)winPopup
 {
     
     CCSprite *darkfilter = 
@@ -34,7 +34,7 @@
                                 screenSize.height/2)];
     [darkfilter opacity];
     [self addChild:darkfilter];
-    CCSprite *deathbg = [CCSprite spriteWithFile:@"fail_bg.png"];
+    CCSprite *deathbg = [CCSprite spriteWithFile:@"win_bg.png"];
     [deathbg setPosition:ccp(screenSize.width/2, 
                              screenSize.height/2)];
     [self addChild:deathbg];
@@ -73,9 +73,9 @@
     [self addChild:replayMenu];
     [self addChild:homeMenu];
     
-    CCSprite *youfailLabel = [CCSprite spriteWithFile:@"you_fail_label.png"];
-    [youfailLabel setPosition:ccp(screenSize.width/2, screenSize.height/2 + 65)];
-    [self addChild:youfailLabel];
+    CCSprite *youwinLabel = [CCSprite spriteWithFile:@"you_win_label.png"];
+    [youwinLabel setPosition:ccp(screenSize.width/2, screenSize.height/2 + 65)];
+    [self addChild:youwinLabel];
     
 }
 
@@ -85,7 +85,7 @@
         // enable touches
         self.isTouchEnabled = YES; 
         screenSize = [CCDirector sharedDirector].winSize;
-        [self deathPopup];
+        [self winPopup];
         CCLOG(@"PopUpLayer initialized");
     }
     return self; 

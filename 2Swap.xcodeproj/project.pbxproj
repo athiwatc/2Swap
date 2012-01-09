@@ -339,6 +339,7 @@
 		03B09F61148DC47E00E9B977 /* Player_iPhone.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03B09F5F148DC47E00E9B977 /* Player_iPhone.plist */; };
 		03B09F62148DC47E00E9B977 /* Player_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B09F60148DC47E00E9B977 /* Player_iPhone.png */; };
 		03B09F67148DF49F00E9B977 /* Player.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03B09F66148DF49F00E9B977 /* Player.plist */; };
+		03B2573214BAEBAC00C146D9 /* WinPopUpLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03B2573114BAEBAC00C146D9 /* WinPopUpLayer.mm */; };
 		03B7F7EA14B472F600023DE9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B7F7E914B472F600023DE9 /* Default@2x.png */; };
 		03BC7538148B5A3D00BEF0C6 /* ContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03BC7533148B5A3D00BEF0C6 /* ContactListener.mm */; };
 		03BC7539148B5A3D00BEF0C6 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BC7535148B5A3D00BEF0C6 /* GameObject.m */; };
@@ -883,6 +884,8 @@
 		03B09F5F148DC47E00E9B977 /* Player_iPhone.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Player_iPhone.plist; sourceTree = "<group>"; };
 		03B09F60148DC47E00E9B977 /* Player_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player_iPhone.png; sourceTree = "<group>"; };
 		03B09F66148DF49F00E9B977 /* Player.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Player.plist; sourceTree = "<group>"; };
+		03B2573014BAEBAC00C146D9 /* WinPopUpLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinPopUpLayer.h; sourceTree = "<group>"; };
+		03B2573114BAEBAC00C146D9 /* WinPopUpLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WinPopUpLayer.mm; sourceTree = "<group>"; };
 		03B7F7E914B472F600023DE9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
 		03BC7532148B5A3D00BEF0C6 /* ContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListener.h; sourceTree = "<group>"; };
 		03BC7533148B5A3D00BEF0C6 /* ContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ContactListener.mm; sourceTree = "<group>"; };
@@ -903,7 +906,7 @@
 		03BC7549148B5B4300BEF0C6 /* SneakyJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystick.m; sourceTree = "<group>"; };
 		03BC754A148B5B4300BEF0C6 /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
 		03BC754B148B5B4300BEF0C6 /* SneakyJoystickSkinnedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedBase.m; sourceTree = "<group>"; };
-		03DF237E14BAA01F00F19506 /* DeathPopUpLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; path = DeathPopUpLayer.h; sourceTree = "<group>"; };
+		03DF237E14BAA01F00F19506 /* DeathPopUpLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeathPopUpLayer.h; sourceTree = "<group>"; };
 		03DF237F14BAA01F00F19506 /* DeathPopUpLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DeathPopUpLayer.mm; sourceTree = "<group>"; };
 		03F5D33014892F9B0082235E /* LevelSelectLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSelectLayer.h; sourceTree = "<group>"; };
 		03F5D33114892F9B0082235E /* LevelSelectLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSelectLayer.m; sourceTree = "<group>"; };
@@ -1729,6 +1732,8 @@
 		037081671488845200671E1F /* Gameplay */ = {
 			isa = PBXGroup;
 			children = (
+				03B2573014BAEBAC00C146D9 /* WinPopUpLayer.h */,
+				03B2573114BAEBAC00C146D9 /* WinPopUpLayer.mm */,
 				03DF237E14BAA01F00F19506 /* DeathPopUpLayer.h */,
 				03DF237F14BAA01F00F19506 /* DeathPopUpLayer.mm */,
 				032C5454148BB775004C61D9 /* GameControlLayer.h */,
@@ -2393,6 +2398,7 @@
 				032C549E148BCF36004C61D9 /* GameScene.mm in Sources */,
 				03AB82C0149F8521004A73D3 /* ContactFiltering.mm in Sources */,
 				03DF238014BAA01F00F19506 /* DeathPopUpLayer.mm in Sources */,
+				03B2573214BAEBAC00C146D9 /* WinPopUpLayer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

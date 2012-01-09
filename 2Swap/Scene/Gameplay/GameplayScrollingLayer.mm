@@ -42,6 +42,7 @@
 {
     [self deleteWorld];
     [currentScene removeDeathPopUp];
+    [currentScene removeWinPopUp];
     [self createNewWorld];
 }
 
@@ -100,6 +101,9 @@
             break;
         case kGameObjectBlackPlatform:
             fixtureDef.filter.groupIndex = kGIndexFilterBlackPlatformerTagValue;
+            break;
+        case kGameObjectGoal:
+            fixtureDef.filter.groupIndex = kGIndexFilterGoalTagValue;
             break;
         default:
             break;
@@ -178,6 +182,29 @@
 					   boxId:-1
            platformObjectTag:kGameObjectBlackPlatform];
 	}
+    
+    objects = [tileMapNode objectGroupNamed:@"finishSign"];
+    
+	for (objPoint in [objects objects]) {
+		x = [[objPoint valueForKey:@"x"] intValue];
+		y = [[objPoint valueForKey:@"y"] intValue];
+		w = [[objPoint valueForKey:@"width"] intValue];
+		h = [[objPoint valueForKey:@"height"] intValue];	
+		
+		CGPoint _point=ccp(x+w/2,y+h/2);
+		CGPoint _size=ccp(w,h);
+		
+		[self makeBox2dObjAt:_point 
+					withSize:_size 
+					 dynamic:false 
+					rotation:0 
+					friction:1.5f 
+					 density:0.0f 
+				 restitution:0 
+					   boxId:-1
+           platformObjectTag:kGameObjectGoal];
+	}
+
 
 }
 
@@ -302,9 +329,13 @@
 	b2Vec2 pos = [player body]->GetPosition();
     
 	CGPoint newPos = ccp(-1 * pos.x * PTM_RATIO + 100, self.position.y * PTM_RATIO);	
-    CCLOG(@"y = %f",pos.y);
+    CCLOG(@"x = %f, y = %f",pos.x,pos.y);
     if (pos.y < -3.0f) {
         [currentScene applyDeathPopUp];
+        [self unscheduleUpdate];
+    }
+    if (contactListener->isGoal) {
+        [currentScene applyWinPopUp];
         [self unscheduleUpdate];
     }
 	[self setPosition:newPos];

@@ -37,5 +37,12 @@ bool ContactFiltering::ShouldCollide(b2Fixture* fixtureA, b2Fixture* fixtureB)
     {
         return true;
     }
+    
+    if (((filterA.groupIndex == kGIndexFilterPlayerBlackTagValue && filterB.groupIndex == kGIndexFilterGoalTagValue) ||
+         (filterA.groupIndex == kGIndexFilterPlayerRedTagValue && filterB.groupIndex == kGIndexFilterGoalTagValue)) ||
+        ((filterB.groupIndex == kGIndexFilterPlayerBlackTagValue && filterA.groupIndex == kGIndexFilterGoalTagValue) ||
+         (filterB.groupIndex == kGIndexFilterPlayerRedTagValue && filterA.groupIndex == kGIndexFilterGoalTagValue))) {
+        return true;
+    }
     return false;
 }

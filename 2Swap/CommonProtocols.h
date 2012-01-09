@@ -49,7 +49,8 @@ typedef enum {
     kGameObjectPlayerRed,
     kGameObjectStaticPlatform,
     kGameObjectBlackPlatform,
-    kGameObjectRedPlatform
+    kGameObjectRedPlatform,
+    kGameObjectGoal
 } GameObjectType;
 
 @protocol GameplayLayerDelegate

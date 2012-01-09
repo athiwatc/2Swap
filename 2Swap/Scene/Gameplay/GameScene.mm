@@ -5,6 +5,20 @@
 
 @implementation GameScene
 
+
+- (void) applyWinPopUp
+{
+    winpop = [WinPopUpLayer node];
+    [winpop setGame:scrollingLayer];
+    [self addChild:winpop z:2];
+
+}
+
+- (void) removeWinPopUp
+{
+    [self removeChild:winpop cleanup:YES];
+}
+
 - (void) applyDeathPopUp
 {
     deathpop = [DeathPopUpLayer node];

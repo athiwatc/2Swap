@@ -15,10 +15,11 @@
 #define IS_STATIC_PLATFORM(x, y)       (x.gameObjectType == kGameObjectStaticPlatform || y.gameObjectType == kGameObjectStaticPlatform)
 #define IS_RED_PLATFORM(x, y)       (x.gameObjectType == kGameObjectRedPlatform || y.gameObjectType == kGameObjectRedPlatform)
 #define IS_BLACK_PLATFORM(x, y)       (x.gameObjectType == kGameObjectBlackPlatform || y.gameObjectType == kGameObjectBlackPlatform)
-
+#define IS_GOAL_OBJECT(x, y)        (x.gameObjectType == kGameObjectGoal || y.gameObjectType == kGameObjectGoal)
 
 ContactListener::ContactListener() {
     isJumping = false;
+    isGoal = false;
 }
 
 ContactListener::~ContactListener() {
@@ -39,7 +40,12 @@ void ContactListener::BeginContact(b2Contact *contact) {
         CCLOG(@"-----> Player made contact with black platform!");
         isJumping = false;
     }
-    isJumping ? CCLOG(@"isJumping = true") : CCLOG(@"isJumping = false");
+    
+    if (IS_GOAL_OBJECT(o1, o2) && (IS_BLACK_PLAYER(o1, o2) || IS_RED_PLAYER(o1, o2))) {
+        isGoal = true;
+        isJumping = false;
+    }
+    //isJumping ? CCLOG(@"isJumping = true") : CCLOG(@"isJumping = false");
 }
 
 void ContactListener::EndContact(b2Contact *contact) {
@@ -57,7 +63,12 @@ void ContactListener::EndContact(b2Contact *contact) {
         CCLOG(@"-----> Player made contact with black platform!");
         isJumping = true;
     }
-    isJumping ? CCLOG(@"isJumping = true") : CCLOG(@"isJumping = false");
+    
+    if (IS_GOAL_OBJECT(o1, o2) && (IS_BLACK_PLAYER(o1, o2) || IS_RED_PLAYER(o1, o2))) {
+        isGoal = true;
+        isJumping = true;
+    }
+    //isJumping ? CCLOG(@"isJumping = true") : CCLOG(@"isJumping = false");
 }
 
 void ContactListener::PreSolve(b2Contact *contact, const b2Manifold *oldManifold) {

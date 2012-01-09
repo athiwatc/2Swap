@@ -15,6 +15,7 @@
 #define kGIndexFilterStaticPlatformerTagValue 3
 #define kGIndexFilterBlackPlatformerTagValue 4
 #define kGIndexFilterRedPlatformerTagValue 5
+#define kGIndexFilterGoalTagValue 6
 
 typedef enum {
     kNoSceneUninitialized=0,
