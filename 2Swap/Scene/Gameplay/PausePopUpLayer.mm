@@ -1,18 +1,18 @@
 //  GameControlLayer.m
 //  SpaceViking
 //
-#import "DeathPopUpLayer.h"
+#import "PausePopUpLayer.h"
 
-@implementation DeathPopUpLayer
+@implementation PausePopUpLayer
 
 - (void) setGame:(GameplayScrollingLayer *)gamei
 {
     game = gamei;
 }
 
-- (void) playNextGame
+- (void) unpauseGame
 {
-    [game playNextGame];
+    [game unpauseGame];
 }
 
 - (void) restartGame
@@ -25,7 +25,7 @@
     [game goHome];
 }
 
--(void)deathPopup
+-(void)pausePopup
 {
     
     CCSprite *darkfilter = 
@@ -34,31 +34,32 @@
                                 screenSize.height/2)];
     [darkfilter opacity];
     [self addChild:darkfilter];
-    CCSprite *deathbg = [CCSprite spriteWithFile:@"fail_bg.png"];
-    [deathbg setPosition:ccp(screenSize.width/2, 
+    CCSprite *pausebg = [CCSprite spriteWithFile:@"pause_bg.png"];
+    [pausebg setPosition:ccp(screenSize.width/2, 
                              screenSize.height/2)];
-    [self addChild:deathbg];
+    [self addChild:pausebg];
     // Main Menu
-    CCMenuItem *playNextGameButton = [CCMenuItemImage 
+    CCMenuItemImage *playNextGameButton = [CCMenuItemImage 
                                            itemFromNormalImage:@"play_button.png" 
                                            selectedImage:@"play_button.png" 
                                            disabledImage:@"play_button_disable.png" 
                                            target:self 
-                                           selector:@selector(playNextGame)];
+                                           selector:@selector(unpauseGame)];
     
-    CCMenuItem *replayButton = [CCMenuItemImage 
+    CCMenuItemImage *replayButton = [CCMenuItemImage 
                                      itemFromNormalImage:@"replay_button.png" 
                                      selectedImage:@"replay_button.png" 
                                      disabledImage:nil 
                                      target:self 
                                      selector:@selector(restartGame)];
     
-    CCMenuItem *homeButton = [CCMenuItemImage 
+    CCMenuItemImage *homeButton = [CCMenuItemImage 
                                    itemFromNormalImage:@"home_button.png" 
                                    selectedImage:@"home_button.png" 
                                    disabledImage:nil 
                                    target:self 
                                    selector:@selector(goHome)];
+    
     CCMenu* playNextMenu = [CCMenu 
                             menuWithItems:playNextGameButton,nil];
     CCMenu* replayMenu = [CCMenu 
@@ -72,9 +73,9 @@
     [self addChild:replayMenu];
     [self addChild:homeMenu];
     
-    CCSprite *youfailLabel = [CCSprite spriteWithFile:@"you_fail_label.png"];
-    [youfailLabel setPosition:ccp(screenSize.width/2, screenSize.height/2 + 65)];
-    [self addChild:youfailLabel];
+    CCSprite *pauseLabel = [CCSprite spriteWithFile:@"pause_label.png"];
+    [pauseLabel setPosition:ccp(screenSize.width/2, screenSize.height/2 + 65)];
+    [self addChild:pauseLabel];
     
 }
 
@@ -84,7 +85,7 @@
         // enable touches
         self.isTouchEnabled = YES; 
         screenSize = [CCDirector sharedDirector].winSize;
-        [self deathPopup];
+        [self pausePopup];
         CCLOG(@"PopUpLayer initialized");
     }
     return self; 

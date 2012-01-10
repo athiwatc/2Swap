@@ -15,6 +15,7 @@
 #import "GameControlLayer.h"
 #import "ContactFiltering.h"
 #import "GameScene.h"
+#import "GameManager.h"
 
 @class Player;
 @class GameScene;
@@ -44,6 +45,8 @@
                    andAttackButton:(SneakyButton*)attackButton;    
 -(void)createNewWorld;
 -(void)deleteWorld;
+-(void)pauseGame;
+-(void)unpauseGame;
 -(void)restartGame;
 -(void)playNextGame;
 -(void)goHome;

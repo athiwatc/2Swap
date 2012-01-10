@@ -13,7 +13,6 @@
 #import "CommonProtocols.h"
 #import "Player.h"
 #import "GameObject.h"
-#import "DeathPopUpLayer.h"
 
 @interface GameplayScrollingLayer(Private) 
 -(void) setupPhysicsWorld;
@@ -43,6 +42,7 @@
     [self deleteWorld];
     [currentScene removeDeathPopUp];
     [currentScene removeWinPopUp];
+    [currentScene removePausePopUp];
     [self createNewWorld];
 }
 
@@ -51,9 +51,22 @@
     
 }
 
+-(void)pauseGame
+{
+    [currentScene applyPausePopUp];
+    CCLOG(@"pause performed");
+    [self unscheduleUpdate];
+}
+
+-(void)unpauseGame
+{
+    [currentScene removePausePopUp];
+    [self scheduleUpdate];
+}
+
 -(void)goHome
 {
-    
+    [[GameManager sharedGameManager] runSceneWithID:kChapterSelectionScene];
 }
 
 - (void) makeBox2dObjAt:(CGPoint)p 
@@ -329,7 +342,7 @@
 	b2Vec2 pos = [player body]->GetPosition();
     
 	CGPoint newPos = ccp(-1 * pos.x * PTM_RATIO + 100, self.position.y * PTM_RATIO);	
-    CCLOG(@"x = %f, y = %f",pos.x,pos.y);
+    //CCLOG(@"x = %f, y = %f",pos.x,pos.y);
     if (pos.y < -3.0f) {
         [currentScene applyDeathPopUp];
         [self unscheduleUpdate];

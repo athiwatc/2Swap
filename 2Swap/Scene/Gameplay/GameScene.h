@@ -9,7 +9,10 @@
 #import "StaticBackgroundLayer.h"
 #import "DeathPopUpLayer.h"
 #import "WinPopUpLayer.h"
+#import "PausePopUpLayer.h"
+#import "HUDLayer.h"
 
+@class PausePopUpLayer;
 @class DeathPopUpLayer;
 @class GameplayScrollingLayer;
 @class WinPopUpLayer;
@@ -19,12 +22,15 @@
     DeathPopUpLayer *deathpop;
     WinPopUpLayer *winpop;
     GameplayScrollingLayer *scrollingLayer;
+    PausePopUpLayer *pausepop;
 }
 
 - (void) applyDeathPopUp;
 - (void) removeDeathPopUp;
 - (void) applyWinPopUp;
 - (void) removeWinPopUp;
+- (void) applyPausePopUp;
+- (void) removePausePopUp;
 
 
 @end

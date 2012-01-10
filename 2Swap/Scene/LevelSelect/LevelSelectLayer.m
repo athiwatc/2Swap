@@ -32,6 +32,7 @@
     
     // load the game scene
     //[SceneManager goGameScene];
+    [[GameManager sharedGameManager] runSceneWithID:kGameLevel1];
 }
 
 - (void)onBack: (id) sender {

@@ -6,12 +6,23 @@
 @implementation GameScene
 
 
+- (void) applyPausePopUp
+{
+    pausepop = [PausePopUpLayer node];
+    [pausepop setGame:scrollingLayer];
+    [self addChild:pausepop z:4];
+}
+
+- (void) removePausePopUp
+{
+    [self removeChild:pausepop cleanup:YES];
+}
+
 - (void) applyWinPopUp
 {
     winpop = [WinPopUpLayer node];
     [winpop setGame:scrollingLayer];
-    [self addChild:winpop z:2];
-
+    [self addChild:winpop z:4];
 }
 
 - (void) removeWinPopUp
@@ -23,7 +34,7 @@
 {
     deathpop = [DeathPopUpLayer node];
     [deathpop setGame:scrollingLayer];
-    [self addChild:deathpop z:2];
+    [self addChild:deathpop z:4];
 }
 
 - (void) removeDeathPopUp
@@ -54,6 +65,9 @@
         
         [scrollingLayer setCurrentScene:self];
         
+        HUDLayer *hud = [HUDLayer node];
+        [hud setGame:scrollingLayer];
+        [self addChild:hud z:3];
     }
     return self;
 }

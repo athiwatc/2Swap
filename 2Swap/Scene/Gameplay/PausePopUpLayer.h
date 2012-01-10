@@ -4,10 +4,9 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "GameplayScrollingLayer.h"
-
 @class GameplayScrollingLayer;
 
-@interface WinPopUpLayer : CCLayer {
+@interface PausePopUpLayer : CCLayer {
     GameplayScrollingLayer *game;
     CGSize screenSize;
 }

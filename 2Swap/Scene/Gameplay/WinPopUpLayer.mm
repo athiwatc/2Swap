@@ -42,7 +42,7 @@
     CCMenuItemImage *playNextGameButton = [CCMenuItemImage 
                                            itemFromNormalImage:@"play_button.png" 
                                            selectedImage:@"play_button.png" 
-                                           disabledImage:nil 
+                                           disabledImage:@"play_button_disable.png" 
                                            target:self 
                                            selector:@selector(playNextGame)];
     
