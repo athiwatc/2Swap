@@ -85,8 +85,6 @@
             [layers addObject:layer];
         }
         
-        
-        
         // Set up the swipe-able layers
         CCScrollLayer *scroller = [[CCScrollLayer alloc] initWithLayers:layers 
                                                             widthOffset:230];

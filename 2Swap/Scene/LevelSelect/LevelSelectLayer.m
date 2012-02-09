@@ -31,7 +31,6 @@
     [GameDataParser saveData:gameData];
     
     // load the game scene
-    //[SceneManager goGameScene];
     [[GameManager sharedGameManager] runSceneWithID:kGameLevel1];
 }
 

@@ -14,7 +14,7 @@
 #import "Player.h"
 #import "GameObject.h"
 
-@interface GameplayScrollingLayer(Private) 
+@interface GameplayScrollingLayer(Private)
 -(void) setupPhysicsWorld;
 @end
 
@@ -48,7 +48,10 @@
 
 -(void)playNextGame
 {
-    
+    if (level_manager.hasNextLevel) {
+        [level_manager goNextLevel];
+    }
+    [self restartGame];
 }
 
 -(void)pauseGame
@@ -222,7 +225,7 @@
 }
 
 - (void) addScrollingBackgroundWithTileMap {
-	tileMapNode = [CCTMXTiledMap tiledMapWithTMXFile:@"scroller.tmx"];
+	tileMapNode = [CCTMXTiledMap tiledMapWithTMXFile:level_manager.getLevelTMXFileName];
 	tileMapNode.anchorPoint = ccp(0, 0);
 	[self addChild:tileMapNode];
 }
@@ -269,6 +272,7 @@
 	delete m_debugDraw;
     [self removeChild:player cleanup:YES];
     [self removeChild:sceneSpriteBatchNode cleanup:YES];
+    [self removeChild:tileMapNode cleanup:YES];
 }
 
 // initialize your instance here
@@ -278,10 +282,13 @@
 		
 		// enable touches
 		self.isTouchEnabled = YES;
-				
-        [self createNewWorld];
+        
     }
 	return self;
+}
+
+-(void) setupLevel : (LevelManager*) levelManager {
+    level_manager = levelManager;
 }
 
 -(void) setupPhysicsWorld {
@@ -290,10 +297,10 @@
     world = new b2World(gravity, doSleep);
     
     m_debugDraw = new GLESDebugDraw(PTM_RATIO);
-    world->SetDebugDraw(m_debugDraw);
+    //world->SetDebugDraw(m_debugDraw);
     uint32 flags = 0;
     flags += b2DebugDraw::e_shapeBit;
-    m_debugDraw->SetFlags(flags);
+    //m_debugDraw->SetFlags(flags);
 
     contactListener = new ContactListener();
     world->SetContactListener(contactListener);

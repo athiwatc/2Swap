@@ -52,15 +52,19 @@
         [StaticBackgroundLayer node];
         [self addChild:backgroundLayer z:0];
         
+        LevelManager *level_manager = [[LevelManager alloc] init];
+        
         // Initialize the Control Layer
         controlLayer = [GameControlLayer node];
         [self addChild:controlLayer z:2 tag:2];
         
         // Gameplay Layer
         scrollingLayer = [GameplayScrollingLayer node];
+        [scrollingLayer setupLevel:level_manager];
         [scrollingLayer connectControlsWithJoystick:[controlLayer leftJoystick] 
                                       andJumpButton:[controlLayer jumpButton]
                                     andAttackButton:[controlLayer attackButton]];
+        [scrollingLayer createNewWorld];
         [self addChild:scrollingLayer z:1 tag:1];
         
         [scrollingLayer setCurrentScene:self];

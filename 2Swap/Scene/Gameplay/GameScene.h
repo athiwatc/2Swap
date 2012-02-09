@@ -11,11 +11,13 @@
 #import "WinPopUpLayer.h"
 #import "PausePopUpLayer.h"
 #import "HUDLayer.h"
+#import "LevelManager.h"
 
 @class PausePopUpLayer;
 @class DeathPopUpLayer;
 @class GameplayScrollingLayer;
 @class WinPopUpLayer;
+@class LevelManager;
 
 @interface GameScene : CCScene {
     GameControlLayer *controlLayer;
@@ -23,6 +25,7 @@
     WinPopUpLayer *winpop;
     GameplayScrollingLayer *scrollingLayer;
     PausePopUpLayer *pausepop;
+    LevelManager *levelmanager;
 }
 
 - (void) applyDeathPopUp;

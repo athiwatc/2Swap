@@ -16,6 +16,7 @@
 #import "ContactFiltering.h"
 #import "GameScene.h"
 #import "GameManager.h"
+#import "LevelManager.h"
 
 @class Player;
 @class GameScene;
@@ -38,7 +39,9 @@
     SneakyButton *jumpButt;
     SneakyButton *attackButt;
 
+    LevelManager *level_manager;
 }
+
 
 -(void)connectControlsWithJoystick:(SneakyJoystick*)leftJoystick 
                      andJumpButton:(SneakyButton*)jumpButton 
@@ -51,5 +54,6 @@
 -(void)playNextGame;
 -(void)goHome;
 -(void)setCurrentScene : (GameScene*) gameScene;
+-(void) setupLevel : (LevelManager*) levelManager;
 
 @end
