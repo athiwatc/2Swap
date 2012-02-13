@@ -24,6 +24,11 @@
 @interface GameplayScrollingLayer : CCLayer
 {
     CGSize screenSize;
+    float max_width_map;
+    float max_height_map;
+    float player_size_offset;
+    int mid_screen_pos;
+    
     CCSpriteBatchNode *sceneSpriteBatchNode;
 	b2World* world;
 	GLESDebugDraw *m_debugDraw;

@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="200" height="20" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" width="170" height="20" tilewidth="16" tileheight="16">
  <tileset firstgid="1" name="TilesPack1" tilewidth="50" tileheight="50">
   <image source="TilesPack1.png" width="256" height="1024"/>
  </tileset>
- <objectgroup name="finishSign" width="200" height="20">
+ <objectgroup name="finishSign" width="170" height="20">
   <object x="2528" y="208" width="48" height="48"/>
  </objectgroup>
- <objectgroup name="RedPlatform" width="200" height="20">
+ <objectgroup name="RedPlatform" width="170" height="20">
   <object x="880" y="112" width="240" height="16"/>
   <object x="1552" y="128" width="288" height="16"/>
  </objectgroup>
- <objectgroup name="BlackPlatform" width="200" height="20">
+ <objectgroup name="BlackPlatform" width="170" height="20">
   <object x="544" y="192" width="336" height="16"/>
   <object x="1216" y="192" width="288" height="16"/>
  </objectgroup>
- <objectgroup name="StaticPlatform" width="200" height="20">
+ <objectgroup name="StaticPlatform" width="170" height="20">
   <object x="0" y="272" width="673" height="48"/>
   <object x="1872" y="256" width="848" height="64"/>
  </objectgroup>
- <layer name="TextureLayer" width="200" height="20">
+ <layer name="TextureLayer" width="170" height="20">
   <data encoding="base64" compression="zlib">
-   eJzt00EKwjAQBdCiICiK4EpE739Nt0OxOGkahsJ7m3wmCZkEMk0AAAAAAAAA+3cN+ZTIr7HtACu0/mN/GgAA+lxCfnTkz5ZN/dDT5+jegP/uO8jHxn1Vqt8pmwGAsZ4h3xbqmTVV9cNsrNT6lj337tlL3jnkdyIvrd+qvvbcOF/lCzZgBus=
+   eJzt00EKwjAQBdBSoVBRBFel6P2v6XYQC1OTaAPvbfKZJPR3kWEAAAAAAAA4nkvIUyKvbetA1/a+J28LAKC9c8j3gvysWeqDkp6tu0FPbh3k04G61MwA8GtLyNeNeebMv+bj25q9V+v/Su6SN4f8SOSt87Xm33437r8AE0MG6w==
   </data>
  </layer>
 </map>

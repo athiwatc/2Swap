@@ -54,12 +54,15 @@
     ContactListener *contactListener;
     BOOL jumpButtonActived;
 
+    float lastYVelocity;
+	float jumpCounter;
+    bool onGround;
 }
 
 -(void) createBox2dObject:(b2World*)world;
 -(void) createPlayerFixtureDef : (int) stateTag;
 -(void) move : (float) x;
--(void) jump : (float) x andHeight : (float) y;
+-(void) jump;
 -(void) updateStateWithDeltaTime:(ccTime)deltaTime;
 
 @property (nonatomic, readwrite) b2Body *body;

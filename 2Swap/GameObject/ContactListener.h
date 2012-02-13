@@ -12,7 +12,6 @@ class ContactListener : public b2ContactListener {
 public:
 	ContactListener();
 	~ContactListener();
-    bool isJumping;
     bool isGoal;
     
 	virtual void BeginContact(b2Contact *contact);

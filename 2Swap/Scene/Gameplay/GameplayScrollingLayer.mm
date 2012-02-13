@@ -227,12 +227,16 @@
 - (void) addScrollingBackgroundWithTileMap {
 	tileMapNode = [CCTMXTiledMap tiledMapWithTMXFile:level_manager.getLevelTMXFileName];
 	tileMapNode.anchorPoint = ccp(0, 0);
+    CGSize mapSize = [tileMapNode mapSize];
+    max_width_map = mapSize.width;
+    max_height_map = mapSize.height;
 	[self addChild:tileMapNode];
 }
 
 - (void) createNewWorld
 {
     screenSize = [CCDirector sharedDirector].winSize;
+    mid_screen_pos = screenSize.width/2;
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Player_iPhone.plist"];          // 1
     sceneSpriteBatchNode = [CCSpriteBatchNode batchNodeWithFile:@"Player_iPhone.png"];// 2
     
@@ -282,7 +286,7 @@
 		
 		// enable touches
 		self.isTouchEnabled = YES;
-        
+        player_size_offset = 0.75;
     }
 	return self;
 }
@@ -297,10 +301,10 @@
     world = new b2World(gravity, doSleep);
     
     m_debugDraw = new GLESDebugDraw(PTM_RATIO);
-    //world->SetDebugDraw(m_debugDraw);
+    world->SetDebugDraw(m_debugDraw);
     uint32 flags = 0;
     flags += b2DebugDraw::e_shapeBit;
-    //m_debugDraw->SetFlags(flags);
+    m_debugDraw->SetFlags(flags);
 
     contactListener = new ContactListener();
     world->SetContactListener(contactListener);
@@ -347,9 +351,19 @@
 	}	
 	
 	b2Vec2 pos = [player body]->GetPosition();
-    
-	CGPoint newPos = ccp(-1 * pos.x * PTM_RATIO + 100, self.position.y * PTM_RATIO);	
-    //CCLOG(@"x = %f, y = %f",pos.x,pos.y);
+    CGPoint newPos = ccp(-1 * pos.x * PTM_RATIO + mid_screen_pos, self.position.y * PTM_RATIO);
+    if (pos.x < player_size_offset * 10) {
+        newPos = ccp(-1 * pos.x * PTM_RATIO + (pos.x * PTM_RATIO), self.position.y * PTM_RATIO);
+    } 
+    else if (pos.x > ((max_width_map/2) - (player_size_offset * 10))) {
+        newPos = ccp(-1 * pos.x * PTM_RATIO + (mid_screen_pos + ((pos.x - ((max_width_map/2) - (player_size_offset * 10))) * PTM_RATIO)), self.position.y * PTM_RATIO);
+    }
+    if (pos.x < player_size_offset) {
+        [player body]->ApplyForce(b2Vec2(200.0f, -180.0f), [player body]->GetPosition());
+    } else if (pos.x > ((max_width_map/2) - player_size_offset)) {
+        [player body]->ApplyForce(b2Vec2(-200.0f, -180.0f), [player body]->GetPosition());
+    }
+    CCLOG(@"x = %f, y = %f",pos.x,pos.y);
     if (pos.y < -3.0f) {
         [currentScene applyDeathPopUp];
         [self unscheduleUpdate];

@@ -79,7 +79,7 @@
 		<key>filenamePrefix</key>
 		<string>Jump_black_</string>
 		<key>delay</key>
-		<real>0.125</real>
+		<real>0.7</real>
 		<key>animationFrames</key>
 		<string>4</string>
 	</dict>
@@ -88,16 +88,16 @@
 		<key>filenamePrefix</key>
 		<string>Jump_red_</string>
 		<key>delay</key>
-		<real>0.125</real>
+		<real>0.7</real>
 		<key>animationFrames</key>
-		<string>0,1,2,3,4</string>
+		<string>4</string>
 	</dict>
 	<key>afterJumpingAnim</key>
 	<dict>
 		<key>filenamePrefix</key>
 		<string>Jump_black_</string>
 		<key>delay</key>
-		<real>0.02</real>
+		<real>0.05</real>
 		<key>animationFrames</key>
 		<string>5,6,7,8,9,10</string>
 	</dict>
@@ -106,7 +106,7 @@
 		<key>filenamePrefix</key>
 		<string>Jump_red_</string>
 		<key>delay</key>
-		<real>0.02</real>
+		<real>0.05</real>
 		<key>animationFrames</key>
 		<string>5,6,7,8,9,10</string>
 	</dict>

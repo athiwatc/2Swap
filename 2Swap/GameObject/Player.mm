@@ -59,11 +59,14 @@
 
 -(void)applyJoystick:(SneakyJoystick *)aJoystick forTimeDelta:(float)deltaTime
 {
+    if (attackButton.active) 
+        [self changeState:kStateExploded];
+    
     CGPoint scaledVelocity;
-    if (!contactListener->isJumping) {
-        scaledVelocity = ccpMult(aJoystick.velocity, 0.8f);
+    if (onGround) {
+        scaledVelocity = ccpMult(aJoystick.velocity, 35.0f);
     }
-    else scaledVelocity = ccpMult(aJoystick.velocity, 0.35f);
+    else scaledVelocity = ccpMult(aJoystick.velocity, 15.0f);
     [self move:scaledVelocity.x];
     if (scaledVelocity.x < 0.0f) {
         self.flipX = NO;                                        // 3
@@ -81,6 +84,27 @@
     [self setCharacterState:newState];
     
     switch (newState) {
+            
+            
+            
+        case kStateExploded:
+            
+            if (isSwapRed) {
+                [self stopAction:action];
+                action = [CCAnimate actionWithAnimation:explodedAnim
+                                   restoreOriginalFrame:YES];
+                isSwapRed = NO;
+                gameObjectType = kGameObjectPlayerBlack;
+                [self createPlayerFixtureDef:kGIndexFilterPlayerBlackTagValue];
+            } else {
+                [self stopAction:action];
+                action = [CCAnimate actionWithAnimation:explodedAnim
+                                   restoreOriginalFrame:YES];
+                isSwapRed = YES;
+                gameObjectType = kGameObjectPlayerRed;
+                [self createPlayerFixtureDef:kGIndexFilterPlayerRedTagValue];
+            }
+            
         case kStateIdle:
             
             if (isSwapRed) {
@@ -154,14 +178,12 @@
             
         case kStateJumping:
             
-            if ([self flipX] == NO) {
-                [self jump:0.0f andHeight:25.0f];
-            } else { 
-                [self jump:0.0f andHeight:25.0f];
-            }
+            [self jump];//1--
             if (isSwapRed) {
                 // Viking Jumping animation with the Mallet
-                action = [CCSequence actions:
+                action = [CCAnimate actionWithAnimation:jumpingRedAnim 
+                                   restoreOriginalFrame:NO];
+                /*action = [CCSequence actions:
                           [CCSpawn actions:
                            [CCAnimate 
                             actionWithAnimation:jumpingRedAnim 
@@ -171,9 +193,14 @@
                            actionWithAnimation:afterJumpingRedAnim 
                            restoreOriginalFrame:NO],
                           nil];
+                 */
             } else {
                 // Viking Jumping animation without the Mallet
-                action = [CCSequence actions:
+                action = 
+                [CCAnimate actionWithAnimation:jumpingAnim 
+                          restoreOriginalFrame:NO];
+
+                /*action = [CCSequence actions:
                             [CCSpawn actions:
                            [CCAnimate 
                             actionWithAnimation:jumpingAnim 
@@ -183,6 +210,20 @@
                            actionWithAnimation:afterJumpingAnim 
                            restoreOriginalFrame:NO],
                           nil];
+                 */
+            }
+            
+            break;
+        case kStateAfterJumping:
+            
+            if (isSwapRed) {
+                action = 
+                [CCAnimate actionWithAnimation:afterJumpingRedAnim 
+                          restoreOriginalFrame:YES];
+            } else {
+                action = 
+                [CCAnimate actionWithAnimation:afterJumpingAnim 
+                          restoreOriginalFrame:YES];
             }
             
             break;
@@ -238,22 +279,6 @@
             }
             break;    
             
-        case kStateExploded:
-            
-            if (isSwapRed) {
-                action = [CCAnimate actionWithAnimation:explodedAnim
-                                   restoreOriginalFrame:YES];
-                isSwapRed = NO;
-                gameObjectType = kGameObjectPlayerBlack;
-                [self createPlayerFixtureDef:kGIndexFilterPlayerBlackTagValue];
-            } else {
-                action = [CCAnimate actionWithAnimation:explodedAnim
-                                   restoreOriginalFrame:YES];
-                isSwapRed = YES;
-                gameObjectType = kGameObjectPlayerRed;
-                [self createPlayerFixtureDef:kGIndexFilterPlayerRedTagValue];
-            }
-            
         default:
             break;
     }
@@ -270,6 +295,49 @@
         ([self numberOfRunningActions] > 0))
         return; // Currently playing the taking damage animation
     
+    //Decrement jump counter
+	jumpCounter -= deltaTime;
+    
+	//Did the gunman just hit the ground?
+	if(!onGround){
+        if (body->GetLinearVelocity().y <= 0.0) {
+            /*if (isSwapRed) {
+                [self setDisplayFrame:[[CCSpriteFrameCache 
+                                        sharedSpriteFrameCache] 
+                                       spriteFrameByName:@"Jump_red_5.png"]];
+            } else {
+                [self setDisplayFrame:[[CCSpriteFrameCache 
+                                        sharedSpriteFrameCache] 
+                                       spriteFrameByName:@"Jump_black_5.png"]];
+            }*/
+        }
+		if((body->GetLinearVelocity().y - lastYVelocity) > 2 && lastYVelocity < -2){
+            body->SetLinearVelocity(b2Vec2(body->GetLinearVelocity().x,0));
+			onGround = YES;
+		}else if(body->GetLinearVelocity().y == 0 && lastYVelocity == 0){
+			body->SetLinearVelocity(b2Vec2(body->GetLinearVelocity().x,0));
+			onGround = YES;
+		}
+	}
+	
+	//Did he just fall off the ground without jumping?
+	if(onGround){
+        /*if (isSwapRed) {
+            [self setDisplayFrame:[[CCSpriteFrameCache 
+                                    sharedSpriteFrameCache] 
+                                   spriteFrameByName:@"Idle_red.png"]];
+        } else {
+            [self setDisplayFrame:[[CCSpriteFrameCache 
+                                    sharedSpriteFrameCache] 
+                                   spriteFrameByName:@"Idle_black.png"]];
+        }*/
+		if(body->GetLinearVelocity().y < -2.0f && lastYVelocity < -2.0f && (body->GetLinearVelocity().y < lastYVelocity)){
+			onGround = NO;
+		}
+	}
+    
+	//Store last velocity
+	lastYVelocity = body->GetLinearVelocity().y;
     
     // Check for collisions
     // Change this to keep the object count from querying it each time
@@ -309,22 +377,28 @@
         (self.characterState == kStateWalking) ||
         (self.characterState == kStateCrouching) ||
         (self.characterState == kStateStandingUp) || 
-        (self.characterState == kStateBreathing)) {
+        (self.characterState == kStateBreathing) || 
+        (self.characterState == kStateJumping)) {
         
-        if (jumpButton.active && !contactListener->isJumping) {
+        if (jumpButton.active && onGround) {
             [self changeState:kStateJumping];
-        } else if (attackButton.active) {
+        }
+        if (attackButton.active && joystick.velocity.x == 0.0f) {
             [self changeState:kStateExploded];
-        } else if ((joystick.velocity.x == 0.0f) && 
+        } 
+        if ((joystick.velocity.x == 0.0f) && 
                    (joystick.velocity.y == 0.0f)) {
             if (self.characterState == kStateCrouching) 
                 [self changeState:kStateStandingUp];
-        } else if (joystick.velocity.y < -0.45f) {
+        } 
+        if (joystick.velocity.y < -0.45f) {
             if (self.characterState != kStateCrouching) 
                 [self changeState:kStateCrouching];
-        } else if (joystick.velocity.x != 0.0f) { // dpad moving
-            if (self.characterState != kStateWalking)
+        } 
+        if (joystick.velocity.x != 0.0f) { // dpad moving
+            if (self.characterState != kStateWalking) {
                 [self changeState:kStateWalking];
+            }
             [self applyJoystick:joystick 
                    forTimeDelta:deltaTime];
         }
@@ -357,14 +431,13 @@
         bodyFixture = NULL;
     }
     b2PolygonShape boxShape;
-    boxShape.SetAsBox(1.0f, 1.5f);
     b2Vec2 center;
-    center.Set(0.0f, -0.1f);
-    boxShape.SetAsBox(0.9f, 1.35f, center, 0.0f);
+    center.Set(0.0f, -0.15f);
+    boxShape.SetAsBox(0.7f, 1.3f, center, 0.0f);
 	b2FixtureDef fixtureDef;
     fixtureDef.shape = &boxShape;
 	fixtureDef.density = 0.5f;
-	fixtureDef.friction = 1.0f;
+	fixtureDef.friction = 1.2f;
 	fixtureDef.restitution =  0.0f;
     if(stateTag == kGIndexFilterPlayerBlackTagValue) fixtureDef.filter.groupIndex = kGIndexFilterPlayerBlackTagValue;
     else if (stateTag == kGIndexFilterPlayerRedTagValue) fixtureDef.filter.groupIndex = kGIndexFilterPlayerRedTagValue;
@@ -385,13 +458,20 @@
 
 -(void) move : (float) x {
     b2Vec2 impulse = b2Vec2(x, 0.0f);
-    body->ApplyLinearImpulse(impulse, body->GetWorldCenter());		
+    body->ApplyForce(impulse, body->GetPosition());		
 }
 
--(void) jump : (float) x andHeight : (float) y {
+-(void) jump {
     CCLOG(@"Jump!!");
-    b2Vec2 impulse = b2Vec2(x, y);
-    body->ApplyLinearImpulse(impulse, body->GetWorldCenter());		    
+    if(onGround && jumpCounter < 0){	
+		//Start a jump. Starting requires you to not be moving on the Y.
+		jumpCounter = 0.4f;
+        body->ApplyLinearImpulse(b2Vec2(0,15.0f), body->GetWorldCenter());    
+		onGround = NO;
+	}else if(jumpCounter > 0){	
+		//Continue a jump
+		body->ApplyForce(b2Vec2(0,15.0f), body->GetWorldCenter());
+	}   
 }
 
 #pragma mark -
@@ -442,6 +522,8 @@
 		gameObjectType = kGameObjectPlayerBlack;
         isSwapRed = NO;
         millisecondsStayingIdle = 0.0f;
+        jumpCounter = -10.0f;
+        onGround = NO;
         [self setCharacterHealth:100.0f];
         [self setFlipX:YES];
         [self initAnimations];

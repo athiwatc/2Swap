@@ -18,7 +18,6 @@
 #define IS_GOAL_OBJECT(x, y)        (x.gameObjectType == kGameObjectGoal || y.gameObjectType == kGameObjectGoal)
 
 ContactListener::ContactListener() {
-    isJumping = false;
     isGoal = false;
 }
 
@@ -30,22 +29,16 @@ void ContactListener::BeginContact(b2Contact *contact) {
 	GameObject *o2 = (GameObject*)contact->GetFixtureB()->GetBody()->GetUserData();
 	
 	if (IS_STATIC_PLATFORM(o1, o2) && (IS_BLACK_PLAYER(o1, o2) || IS_RED_PLAYER(o1, o2)) ) {
-        CCLOG(@"-----> Player made contact with static platform!"); 
-        isJumping = false;
+        CCLOG(@"-----> Player made contact with static platform!");    
     } else if (IS_RED_PLATFORM(o1, o2) && (IS_BLACK_PLAYER(o1, o2) || IS_RED_PLAYER(o1, o2)) ) {
         CCLOG(@"-----> Player made contact with red platform!");
-        isJumping = false;
-        
     } else if (IS_BLACK_PLATFORM(o1, o2) && (IS_BLACK_PLAYER(o1, o2) || IS_RED_PLAYER(o1, o2)) ) {
         CCLOG(@"-----> Player made contact with black platform!");
-        isJumping = false;
     }
     
     if (IS_GOAL_OBJECT(o1, o2) && (IS_BLACK_PLAYER(o1, o2) || IS_RED_PLAYER(o1, o2))) {
         isGoal = true;
-        isJumping = false;
     }
-    //isJumping ? CCLOG(@"isJumping = true") : CCLOG(@"isJumping = false");
 }
 
 void ContactListener::EndContact(b2Contact *contact) {
@@ -54,21 +47,14 @@ void ContactListener::EndContact(b2Contact *contact) {
     
     if (IS_STATIC_PLATFORM(o1, o2) && (IS_BLACK_PLAYER(o1, o2) || IS_RED_PLAYER(o1, o2)) ) {
         CCLOG(@"-----> Player made contact with static platform!");
-        isJumping = true;
     } else if (IS_RED_PLATFORM(o1, o2) && (IS_BLACK_PLAYER(o1, o2) || IS_RED_PLAYER(o1, o2)) ) {
-        CCLOG(@"-----> Player made contact with red platform!");
-        isJumping = true;
-        
+        CCLOG(@"-----> Player made contact with red platform!");        
     } else if (IS_BLACK_PLATFORM(o1, o2) && (IS_BLACK_PLAYER(o1, o2) || IS_RED_PLAYER(o1, o2)) ) {
         CCLOG(@"-----> Player made contact with black platform!");
-        isJumping = true;
     }
     
     if (IS_GOAL_OBJECT(o1, o2) && (IS_BLACK_PLAYER(o1, o2) || IS_RED_PLAYER(o1, o2))) {
-        isGoal = true;
-        isJumping = true;
     }
-    //isJumping ? CCLOG(@"isJumping = true") : CCLOG(@"isJumping = false");
 }
 
 void ContactListener::PreSolve(b2Contact *contact, const b2Manifold *oldManifold) {
